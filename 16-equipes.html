@@ -1,20 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Forever Padel — Tournoi 16 équipes</title>
+<title>Forever Padel — 16 équipes</title>
 
 <style>
-
-/* =====================================================
-   STYLE GÉNÉRAL
-===================================================== */
-
 * {
     box-sizing: border-box;
 }
@@ -22,18 +14,13 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: #f5f5f5;
+    background: #f4f4f4;
     color: #111;
 }
 
-
-/* =====================================================
-   HEADER
-===================================================== */
-
 header {
     background: white;
-    padding: 20px 40px;
+    padding: 18px 35px;
     border-bottom: 1px solid #ddd;
     display: flex;
     align-items: center;
@@ -41,8 +28,7 @@ header {
 }
 
 .logo {
-    width: 150px;
-    height: auto;
+    width: 145px;
 }
 
 .header-title {
@@ -51,8 +37,7 @@ header {
 
 .header-title h1 {
     margin: 0;
-    font-size: 28px;
-    letter-spacing: 1px;
+    font-size: 27px;
 }
 
 .header-title p {
@@ -60,55 +45,41 @@ header {
     color: #777;
 }
 
-
-/* =====================================================
-   CONTENEUR
-===================================================== */
-
 .container {
     width: 95%;
     max-width: 1500px;
     margin: 30px auto;
 }
 
-
-/* =====================================================
-   TITRES
-===================================================== */
-
 h2 {
     margin-top: 0;
-    font-size: 25px;
 }
 
 .section-title {
     margin-top: 45px;
     margin-bottom: 20px;
-    font-size: 25px;
 }
 
 
-/* =====================================================
-   MATCHS À SUIVRE
-===================================================== */
+/* ==============================
+   PROCHAINS MATCHS
+============================== */
 
 .schedule {
     background: #111;
     color: white;
-    border-radius: 12px;
     padding: 25px;
-    margin-bottom: 35px;
+    border-radius: 12px;
+    margin-bottom: 30px;
 }
 
 .schedule h2 {
-    margin-top: 0;
     text-align: center;
 }
 
 .schedule-intro {
     text-align: center;
     color: #aaa;
-    margin-bottom: 20px;
 }
 
 .schedule-list {
@@ -119,36 +90,27 @@ h2 {
 
 .schedule-item {
     background: #222;
-    border-radius: 7px;
-    padding: 15px;
-}
-
-.schedule-item.available {
     border-left: 4px solid #e21d48;
+    border-radius: 7px;
+    padding: 16px;
 }
 
 .schedule-number {
-    font-weight: bold;
     color: #e21d48;
-    margin-bottom: 7px;
-}
-
-.schedule-status {
-    font-size: 12px;
-    margin-top: 7px;
-    color: #bbb;
+    font-weight: bold;
+    margin-bottom: 8px;
 }
 
 
-/* =====================================================
-   ÉQUIPES
-===================================================== */
+/* ==============================
+   EQUIPES
+============================== */
 
 .team-setup {
     background: white;
     padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    box-shadow: 0 4px 15px rgba(0,0,0,.06);
 }
 
 .team-grid {
@@ -158,7 +120,7 @@ h2 {
 }
 
 .team-input {
-    padding: 13px;
+    padding: 12px;
     border: 1px solid #ccc;
     border-radius: 7px;
     font-size: 15px;
@@ -170,9 +132,9 @@ h2 {
 }
 
 
-/* =====================================================
+/* ==============================
    BOUTONS
-===================================================== */
+============================== */
 
 button {
     border: none;
@@ -181,17 +143,11 @@ button {
     background: #111;
     color: white;
     cursor: pointer;
-    font-size: 14px;
-    transition: 0.2s;
+    transition: .2s;
 }
 
 button:hover {
     background: #e21d48;
-}
-
-button:disabled {
-    background: #aaa;
-    cursor: not-allowed;
 }
 
 .save-button {
@@ -199,9 +155,9 @@ button:disabled {
 }
 
 
-/* =====================================================
-   TABLEAUX
-===================================================== */
+/* ==============================
+   TABLEAU
+============================== */
 
 .bracket-wrapper {
     overflow-x: auto;
@@ -209,7 +165,7 @@ button:disabled {
 
 .bracket {
     display: flex;
-    gap: 35px;
+    gap: 30px;
     min-width: 1200px;
 }
 
@@ -223,22 +179,22 @@ button:disabled {
 }
 
 
-/* =====================================================
+/* ==============================
    MATCH
-===================================================== */
+============================== */
 
 .match {
     background: white;
     border-radius: 10px;
     padding: 15px;
     margin-bottom: 25px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+    box-shadow: 0 3px 12px rgba(0,0,0,.07);
 }
 
 .match-header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .match-name {
@@ -251,30 +207,22 @@ button:disabled {
 }
 
 .team-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 8px 0;
     border-bottom: 1px solid #eee;
 }
 
-.team-row:last-of-type {
-    border-bottom: none;
-}
-
-.team-name {
-    max-width: 180px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
 .score-input {
     width: 100%;
-    padding: 9px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-top: 10px;
+    margin-top: 12px;
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.score-input:focus {
+    outline: none;
+    border-color: #e21d48;
 }
 
 .save-match {
@@ -282,44 +230,30 @@ button:disabled {
     margin-top: 10px;
 }
 
-
-/* =====================================================
-   FINALE
-===================================================== */
-
 .final-match {
     border: 2px solid #e21d48;
 }
 
-.final-title {
-    color: #e21d48;
-}
 
-
-/* =====================================================
-   TABLEAU DES PERDANTS
-===================================================== */
+/* ==============================
+   PERDANTS
+============================== */
 
 .consolation {
-    background: #eeeeee;
-    padding: 30px;
+    background: #e9e9e9;
+    padding: 25px;
     border-radius: 12px;
 }
 
-.consolation .match {
-    box-shadow: none;
-}
 
-
-/* =====================================================
+/* ==============================
    CLASSEMENT
-===================================================== */
+============================== */
 
 .ranking {
     background: white;
     border-radius: 12px;
     overflow-x: auto;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
 }
 
 table {
@@ -331,7 +265,6 @@ th {
     background: #111;
     color: white;
     padding: 14px;
-    text-align: center;
 }
 
 td {
@@ -340,42 +273,36 @@ td {
     text-align: center;
 }
 
-td:first-child,
 td:nth-child(2) {
     text-align: left;
 }
 
-.position {
-    font-weight: bold;
-}
-
 .gold {
-    background: #fff5c7;
+    background: #fff3b0;
 }
 
 .silver {
-    background: #f0f0f0;
+    background: #e8e8e8;
 }
 
 .bronze {
-    background: #f7e4d3;
+    background: #efd9c5;
 }
 
 
-/* =====================================================
-   RESPONSIVE
-===================================================== */
+/* ==============================
+   MOBILE
+============================== */
 
 @media(max-width: 900px) {
 
     .team-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2,1fr);
     }
 
     .schedule-list {
         grid-template-columns: 1fr;
     }
-
 }
 
 @media(max-width: 600px) {
@@ -395,196 +322,118 @@ td:nth-child(2) {
     .team-grid {
         grid-template-columns: 1fr;
     }
-
 }
-
 </style>
-
 </head>
 
 
 <body>
 
-
-<!-- =====================================================
-     HEADER
-===================================================== -->
-
 <header>
 
     <a href="index.html">
-
-        <img
-            src="logo.png"
-            class="logo"
-            alt="Forever Padel"
-        >
-
+        <img src="logo.png" class="logo" alt="Forever Padel">
     </a>
 
     <div class="header-title">
-
-        <h1>
-            Tournoi 16 équipes
-        </h1>
-
-        <p>
-            Forever Padel
-        </p>
-
+        <h1>Tournoi 16 équipes</h1>
+        <p>Forever Padel</p>
     </div>
 
 </header>
 
 
-
 <div class="container">
 
 
-<!-- =====================================================
-     LES 3 PROCHAINS MATCHS
-===================================================== -->
+<!-- =========================================
+     3 PROCHAINS MATCHS
+========================================= -->
 
 <section class="schedule">
 
-    <h2>
-        ⚡ LES 3 PROCHAINS MATCHS
-    </h2>
+    <h2>⚡ LES 3 PROCHAINS MATCHS</h2>
 
     <p class="schedule-intro">
-        Les trois prochains matchs disponibles
-        sont affichés automatiquement.
+        Les prochains matchs disponibles sont affichés automatiquement.
     </p>
 
-    <div
-        class="schedule-list"
-        id="scheduleList">
-    </div>
+    <div class="schedule-list" id="scheduleList"></div>
 
 </section>
 
 
-
-<!-- =====================================================
-     ENREGISTREMENT DES ÉQUIPES
-===================================================== -->
+<!-- =========================================
+     EQUIPES
+========================================= -->
 
 <section class="team-setup">
 
-    <h2>
-        Enregistrer les 16 équipes
-    </h2>
+    <h2>Enregistrer les 16 équipes</h2>
 
     <p>
-        Entrez le nom des 16 équipes participant
-        au tournoi.
+        Entrez le nom de chaque équipe participant au tournoi.
     </p>
 
-    <div
-        class="team-grid"
-        id="teamInputs">
-    </div>
+    <div class="team-grid" id="teamInputs"></div>
 
-    <button
-        class="save-button"
-        onclick="saveTeams()">
-
+    <button class="save-button" onclick="saveTeams()">
         Enregistrer les équipes
-
     </button>
 
 </section>
 
 
-
-<!-- =====================================================
+<!-- =========================================
      TABLEAU PRINCIPAL
-===================================================== -->
+========================================= -->
 
 <h2 class="section-title">
-
-    🏆 Élimination directe —
-    Tableau principal
-
+    🏆 Tableau principal — Élimination directe
 </h2>
-
 
 <div class="bracket-wrapper">
 
 <div class="bracket">
 
+    <div class="round">
+        <h3>1er tour</h3>
+        <div id="round1"></div>
+    </div>
 
-<div class="round">
+    <div class="round">
+        <h3>Quarts de finale</h3>
+        <div id="quarterFinals"></div>
+    </div>
 
-    <h3>
-        1er tour
-    </h3>
+    <div class="round">
+        <h3>Demi-finales</h3>
+        <div id="semiFinals"></div>
+    </div>
 
-    <div id="mainR1"></div>
-
-</div>
-
-
-<div class="round">
-
-    <h3>
-        Quarts de finale
-    </h3>
-
-    <div id="mainQF"></div>
-
-</div>
-
-
-<div class="round">
-
-    <h3>
-        Demi-finales
-    </h3>
-
-    <div id="mainSF"></div>
-
-</div>
-
-
-<div class="round">
-
-    <h3 class="final-title">
-        Finale
-    </h3>
-
-    <div id="mainFinal"></div>
-
-</div>
-
+    <div class="round">
+        <h3>Finale</h3>
+        <div id="final"></div>
+    </div>
 
 </div>
 
 </div>
 
 
-
-<!-- =====================================================
+<!-- =========================================
      TABLEAU DES PERDANTS
-===================================================== -->
+========================================= -->
 
 <h2 class="section-title">
-
-    Tableau secondaire —
-    Classement 9ᵉ à 16ᵉ
-
+    Tableau secondaire — Classement 9ᵉ à 16ᵉ
 </h2>
-
 
 <section class="consolation">
 
     <p>
-
-        Les équipes éliminées au premier tour
-        sont automatiquement reversées dans
-        ce tableau afin de déterminer leur
-        classement final.
-
+        Les équipes éliminées au premier tour sont
+        reversées dans le tableau secondaire.
     </p>
 
     <div class="bracket-wrapper">
@@ -592,35 +441,18 @@ td:nth-child(2) {
         <div class="bracket">
 
             <div class="round">
-
-                <h3>
-                    1er tour
-                </h3>
-
-                <div id="consR1"></div>
-
+                <h3>Matchs 15 à 18</h3>
+                <div id="loserRound1"></div>
             </div>
 
-
             <div class="round">
-
-                <h3>
-                    Demi-finales
-                </h3>
-
-                <div id="consSF"></div>
-
+                <h3>Matchs suivants</h3>
+                <div id="loserRound2"></div>
             </div>
 
-
             <div class="round">
-
-                <h3>
-                    Matchs de classement
-                </h3>
-
-                <div id="consFinals"></div>
-
+                <h3>Classement</h3>
+                <div id="loserFinals"></div>
             </div>
 
         </div>
@@ -630,81 +462,62 @@ td:nth-child(2) {
 </section>
 
 
-
-<!-- =====================================================
-     CLASSEMENT FINAL
-===================================================== -->
+<!-- =========================================
+     CLASSEMENT
+========================================= -->
 
 <h2 class="section-title">
-
     Classement final
-
 </h2>
-
 
 <section class="ranking">
 
 <table>
 
 <thead>
-
 <tr>
-
     <th>Place</th>
-
     <th>Équipe</th>
-
     <th>Jeux gagnés</th>
-
     <th>Jeux perdus</th>
-
     <th>Différence</th>
-
-    <th>Matchs joués</th>
-
+    <th>Matchs</th>
     <th>Victoires</th>
-
     <th>Défaites</th>
-
 </tr>
-
 </thead>
 
-<tbody id="rankingBody">
-
-</tbody>
+<tbody id="rankingBody"></tbody>
 
 </table>
 
 </section>
 
-
 </div>
-
 
 
 <script>
 
 /* =====================================================
-   CONFIGURATION
+   DONNÉES DU TOURNOI
 ===================================================== */
-
-const TOTAL_TEAMS = 16;
 
 const matches = {};
 
+const teams = [];
+
+let tournamentStarted = false;
+
 
 /* =====================================================
-   CRÉATION MATCH
+   CRÉATION DES MATCHS
 ===================================================== */
 
-function createMatch(id, name, type) {
+function createMatch(number, type) {
 
-    return {
+    matches[number] = {
 
-        id: id,
-
-        name: name,
+        number: number,
 
         type: type,
 
@@ -712,13 +525,13 @@ function createMatch(id, name, type) {
 
         team2: null,
 
-        winner: null,
-
-        loser: null,
-
         score1: null,
 
         score2: null,
+
+        winner: null,
+
+        loser: null,
 
         completed: false
 
@@ -727,111 +540,48 @@ function createMatch(id, name, type) {
 }
 
 
-/* =====================================================
-   MATCHS PRINCIPAUX
-===================================================== */
+/* =========================
+   MATCHS 1 À 8
+========================= */
 
 for(let i = 1; i <= 8; i++) {
-
-    matches["M" + i] =
-        createMatch(
-            "M" + i,
-            "Match " + i,
-            "main-r1"
-        );
-
+    createMatch(i, "round1");
 }
 
+
+/* =========================
+   MATCHS 9 À 12
+========================= */
 
 for(let i = 9; i <= 12; i++) {
-
-    matches["QF" + (i - 8)] =
-        createMatch(
-            "QF" + (i - 8),
-            "Match " + i,
-            "main-qf"
-        );
-
+    createMatch(i, "quarter");
 }
 
 
-matches.SF1 =
-    createMatch(
-        "SF1",
-        "Match 13",
-        "main-sf"
-    );
+/* =========================
+   MATCHS 13 ET 14
+========================= */
+
+createMatch(13, "semi");
+createMatch(14, "semi");
 
 
-matches.SF2 =
-    createMatch(
-        "SF2",
-        "Match 14",
-        "main-sf"
-    );
+/* =========================
+   MATCHS 15 À 31
+========================= */
 
-
-/* =====================================================
-   TABLEAU DES PERDANTS
-===================================================== */
-
-for(let i = 15; i <= 18; i++) {
-
-    matches["C" + (i - 14)] =
-        createMatch(
-            "C" + (i - 14),
-            "Match " + i,
-            "cons-r1"
-        );
-
+for(let i = 15; i <= 31; i++) {
+    createMatch(i, "loser");
 }
 
 
-for(let i = 19; i <= 22; i++) {
+/* =========================
+   MATCH 32 = FINALE
+========================= */
 
-    matches["CSF" + (i - 18)] =
-        createMatch(
-            "CSF" + (i - 18),
-            "Match " + i,
-            "cons-sf"
-        );
+matches[32] = {
 
-}
-
-
-for(let i = 23; i <= 26; i++) {
-
-    matches["CF" + (i - 22)] =
-        createMatch(
-            "CF" + (i - 22),
-            "Match " + i,
-            "cons-final"
-        );
-
-}
-
-
-for(let i = 27; i <= 31; i++) {
-
-    matches["X" + (i - 26)] =
-        createMatch(
-            "X" + (i - 26),
-            "Match " + i,
-            "cons-final"
-        );
-
-}
-
-
-/* =====================================================
-   MATCH 32 — FINALE
-===================================================== */
-
-matches.FINAL = {
-
-    id: "FINAL",
-
-    name: "Match 32 — Finale",
+    number: 32,
 
     type: "final",
 
@@ -839,13 +589,13 @@ matches.FINAL = {
 
     team2: null,
 
-    winner: null,
-
-    loser: null,
-
     sets1: [],
 
     sets2: [],
+
+    winner: null,
+
+    loser: null,
 
     completed: false
 
@@ -853,7 +603,7 @@ matches.FINAL = {
 
 
 /* =====================================================
-   CHAMPS ÉQUIPES
+   CHAMPS DES EQUIPES
 ===================================================== */
 
 function createTeamInputs() {
@@ -863,7 +613,7 @@ function createTeamInputs() {
 
     container.innerHTML = "";
 
-    for(let i = 1; i <= TOTAL_TEAMS; i++) {
+    for(let i = 1; i <= 16; i++) {
 
         const input =
             document.createElement("input");
@@ -876,32 +626,28 @@ function createTeamInputs() {
             "Équipe " + i;
 
         container.appendChild(input);
-
     }
-
 }
 
 
 /* =====================================================
-   SAUVEGARDE ÉQUIPES
+   ENREGISTRER LES EQUIPES
 ===================================================== */
 
 function saveTeams() {
 
-    const teams = [];
+    teams.length = 0;
 
-    for(let i = 1; i <= TOTAL_TEAMS; i++) {
+    for(let i = 1; i <= 16; i++) {
 
-        const input =
+        const value =
             document.getElementById(
                 "team" + i
-            );
+            ).value.trim();
 
         teams.push(
-            input.value.trim() ||
-            "Équipe " + i
+            value || "Équipe " + i
         );
-
     }
 
     localStorage.setItem(
@@ -909,97 +655,187 @@ function saveTeams() {
         JSON.stringify(teams)
     );
 
-    initializeTournament();
+    tournamentStarted = true;
 
-    alert(
-        "Les 16 équipes ont été enregistrées."
-    );
+    initializeMatches();
 
+    render();
+
+    alert("Les équipes ont été enregistrées.");
 }
 
 
 /* =====================================================
-   INITIALISATION
+   INITIALISATION DES 8 PREMIERS MATCHS
 ===================================================== */
 
-function initializeTournament() {
+function initializeMatches() {
 
-    const teams =
-        JSON.parse(
-            localStorage.getItem(
-                "foreverPadelTeams16"
-            )
-        );
+    matches[1].team1 = teams[0];
+    matches[1].team2 = teams[15];
 
-    if(!teams) return;
+    matches[2].team1 = teams[7];
+    matches[2].team2 = teams[8];
 
+    matches[3].team1 = teams[3];
+    matches[3].team2 = teams[12];
 
-    matches.M1.team1 = teams[0];
-    matches.M1.team2 = teams[15];
+    matches[4].team1 = teams[4];
+    matches[4].team2 = teams[11];
 
-    matches.M2.team1 = teams[7];
-    matches.M2.team2 = teams[8];
+    matches[5].team1 = teams[1];
+    matches[5].team2 = teams[14];
 
-    matches.M3.team1 = teams[3];
-    matches.M3.team2 = teams[12];
+    matches[6].team1 = teams[6];
+    matches[6].team2 = teams[9];
 
-    matches.M4.team1 = teams[4];
-    matches.M4.team2 = teams[11];
+    matches[7].team1 = teams[2];
+    matches[7].team2 = teams[13];
 
-    matches.M5.team1 = teams[1];
-    matches.M5.team2 = teams[14];
+    matches[8].team1 = teams[5];
+    matches[8].team2 = teams[10];
 
-    matches.M6.team1 = teams[6];
-    matches.M6.team2 = teams[9];
-
-    matches.M7.team1 = teams[2];
-    matches.M7.team2 = teams[13];
-
-    matches.M8.team1 = teams[5];
-    matches.M8.team2 = teams[10];
-
-
-    loadSavedMatches();
-
-    updateTournament();
-
-    renderAll();
-
+    updateProgression();
 }
 
 
 /* =====================================================
-   MATCH DISPONIBLE
+   PROGRESSION DU TOURNOI
 ===================================================== */
 
-function isAvailable(match) {
+function updateProgression() {
+
+    /* QUARTS */
+
+    matches[9].team1 = matches[1].winner;
+    matches[9].team2 = matches[2].winner;
+
+    matches[10].team1 = matches[3].winner;
+    matches[10].team2 = matches[4].winner;
+
+    matches[11].team1 = matches[5].winner;
+    matches[11].team2 = matches[6].winner;
+
+    matches[12].team1 = matches[7].winner;
+    matches[12].team2 = matches[8].winner;
+
+
+    /* DEMI-FINALES */
+
+    matches[13].team1 = matches[9].winner;
+    matches[13].team2 = matches[10].winner;
+
+    matches[14].team1 = matches[11].winner;
+    matches[14].team2 = matches[12].winner;
+
+
+    /* FINALE */
+
+    matches[32].team1 = matches[13].winner;
+    matches[32].team2 = matches[14].winner;
+
+
+    /* ===============================
+       TABLEAU DES PERDANTS
+    =============================== */
+
+    matches[15].team1 = matches[1].loser;
+    matches[15].team2 = matches[2].loser;
+
+    matches[16].team1 = matches[3].loser;
+    matches[16].team2 = matches[4].loser;
+
+    matches[17].team1 = matches[5].loser;
+    matches[17].team2 = matches[6].loser;
+
+    matches[18].team1 = matches[7].loser;
+    matches[18].team2 = matches[8].loser;
+
+
+    matches[19].team1 = matches[15].winner;
+    matches[19].team2 = matches[16].winner;
+
+    matches[20].team1 = matches[17].winner;
+    matches[20].team2 = matches[18].winner;
+
+
+    matches[21].team1 = matches[15].loser;
+    matches[21].team2 = matches[16].loser;
+
+    matches[22].team1 = matches[17].loser;
+    matches[22].team2 = matches[18].loser;
+
+
+    matches[23].team1 = matches[19].winner;
+    matches[23].team2 = matches[20].winner;
+
+
+    matches[24].team1 = matches[19].loser;
+    matches[24].team2 = matches[20].loser;
+
+
+    matches[25].team1 = matches[21].winner;
+    matches[25].team2 = matches[22].winner;
+
+
+    matches[26].team1 = matches[21].loser;
+    matches[26].team2 = matches[22].loser;
+
+
+    matches[27].team1 = matches[23].winner;
+    matches[27].team2 = matches[25].winner;
+
+
+    matches[28].team1 = matches[23].loser;
+    matches[28].team2 = matches[25].loser;
+
+
+    matches[29].team1 = matches[24].winner;
+    matches[29].team2 = matches[26].winner;
+
+
+    matches[30].team1 = matches[24].loser;
+    matches[30].team2 = matches[26].loser;
+
+
+    matches[31].team1 = matches[28].winner;
+    matches[31].team2 = matches[30].winner;
+}
+
+
+/* =====================================================
+   VERIFICATION MATCH DISPONIBLE
+===================================================== */
+
+function matchAvailable(match) {
 
     return (
-        match.team1 &&
-        match.team2 &&
+        match.team1 !== null &&
+        match.team2 !== null &&
         !match.completed
     );
-
 }
 
 
 /* =====================================================
-   SAUVEGARDE MATCH CLASSIQUE
+   ENREGISTRER UN SCORE
 ===================================================== */
 
-function saveNormalMatch(id) {
+function saveScore(number) {
 
-    const match =
-        matches[id];
+    const match = matches[number];
 
-    const score =
+    const input =
         document.getElementById(
-            id + "_score"
-        ).value.trim();
+            "score-" + number
+        );
+
+    const value =
+        input.value.trim();
 
 
     const result =
-        score.match(
+        value.match(
             /^(\d+)\s*-\s*(\d+)$/
         );
 
@@ -1007,11 +843,10 @@ function saveNormalMatch(id) {
     if(!result) {
 
         alert(
-            "Entrez le score sous la forme 7-9."
+            "Entre le score sous la forme exemple 7-9."
         );
 
         return;
-
     }
 
 
@@ -1022,17 +857,20 @@ function saveNormalMatch(id) {
         parseInt(result[2]);
 
 
+    /* =================================
+       MATCH NORMAL = 9 JEUX GAGNANTS
+    ================================= */
+
     if(
         score1 !== 9 &&
         score2 !== 9
     ) {
 
         alert(
-            "Le match doit être gagné à 9 jeux."
+            "Le match doit être gagné avec 9 jeux."
         );
 
         return;
-
     }
 
 
@@ -1043,12 +881,10 @@ function saveNormalMatch(id) {
         );
 
         return;
-
     }
 
 
     match.score1 = score1;
-
     match.score2 = score2;
 
     match.completed = true;
@@ -1057,89 +893,78 @@ function saveNormalMatch(id) {
     if(score1 > score2) {
 
         match.winner = match.team1;
-
         match.loser = match.team2;
 
     } else {
 
         match.winner = match.team2;
-
         match.loser = match.team1;
-
     }
 
 
-    saveMatches();
+    updateProgression();
 
-    updateTournament();
+    saveData();
 
-    renderAll();
-
+    render();
 }
 
 
 /* =====================================================
-   SAUVEGARDE FINALE
-   FINALE = 2 SETS
+   FINALE — 2 SETS
 ===================================================== */
 
 function saveFinal() {
 
-    const match =
-        matches.FINAL;
+    const match = matches[32];
 
 
     const s11 =
         parseInt(
             document.getElementById(
-                "FINAL_s11"
+                "final-s11"
             ).value
         );
-
 
     const s12 =
         parseInt(
             document.getElementById(
-                "FINAL_s12"
+                "final-s12"
             ).value
         );
-
 
     const s21 =
         parseInt(
             document.getElementById(
-                "FINAL_s21"
+                "final-s21"
             ).value
         );
-
 
     const s22 =
         parseInt(
             document.getElementById(
-                "FINAL_s22"
+                "final-s22"
             ).value
         );
 
 
     if(
-        [s11, s12, s21, s22]
+        [s11,s12,s21,s22]
         .some(
             value => isNaN(value)
         )
     ) {
 
         alert(
-            "Veuillez remplir les deux sets."
+            "Remplissez les deux sets."
         );
 
         return;
-
     }
 
 
-    let winner = null;
-
-    let loser = null;
+    let winner;
+    let loser;
 
 
     if(
@@ -1148,7 +973,6 @@ function saveFinal() {
     ) {
 
         winner = match.team1;
-
         loser = match.team2;
 
     }
@@ -1159,7 +983,6 @@ function saveFinal() {
     ) {
 
         winner = match.team2;
-
         loser = match.team1;
 
     }
@@ -1167,256 +990,48 @@ function saveFinal() {
     else {
 
         alert(
-            "Une équipe doit remporter les deux sets pour gagner la finale."
+            "La finale doit être gagnée en remportant 2 sets."
         );
 
         return;
-
     }
 
 
-    match.sets1 = [
-        s11,
-        s21
-    ];
-
-
-    match.sets2 = [
-        s12,
-        s22
-    ];
-
+    match.sets1 = [s11,s21];
+    match.sets2 = [s12,s22];
 
     match.winner = winner;
-
     match.loser = loser;
 
     match.completed = true;
 
 
-    saveMatches();
+    saveData();
 
-    renderAll();
-
+    render();
 }
 
 
 /* =====================================================
-   MISE À JOUR DU TOURNOI
+   CREATION CARTE MATCH
 ===================================================== */
 
-function updateTournament() {
-
-
-    matches.QF1.team1 =
-        matches.M1.winner;
-
-    matches.QF1.team2 =
-        matches.M2.winner;
-
-
-    matches.QF2.team1 =
-        matches.M3.winner;
-
-    matches.QF2.team2 =
-        matches.M4.winner;
-
-
-    matches.QF3.team1 =
-        matches.M5.winner;
-
-    matches.QF3.team2 =
-        matches.M6.winner;
-
-
-    matches.QF4.team1 =
-        matches.M7.winner;
-
-    matches.QF4.team2 =
-        matches.M8.winner;
-
-
-    matches.SF1.team1 =
-        matches.QF1.winner;
-
-    matches.SF1.team2 =
-        matches.QF2.winner;
-
-
-    matches.SF2.team1 =
-        matches.QF3.winner;
-
-    matches.SF2.team2 =
-        matches.QF4.winner;
-
-
-    matches.FINAL.team1 =
-        matches.SF1.winner;
-
-    matches.FINAL.team2 =
-        matches.SF2.winner;
-
-
-    /* =================================================
-       TABLEAU DES PERDANTS
-    ================================================= */
-
-    matches.C1.team1 =
-        matches.M1.loser;
-
-    matches.C1.team2 =
-        matches.M2.loser;
-
-
-    matches.C2.team1 =
-        matches.M3.loser;
-
-    matches.C2.team2 =
-        matches.M4.loser;
-
-
-    matches.C3.team1 =
-        matches.M5.loser;
-
-    matches.C3.team2 =
-        matches.M6.loser;
-
-
-    matches.C4.team1 =
-        matches.M7.loser;
-
-    matches.C4.team2 =
-        matches.M8.loser;
-
-
-    matches.CSF1.team1 =
-        matches.C1.winner;
-
-    matches.CSF1.team2 =
-        matches.C2.winner;
-
-
-    matches.CSF2.team1 =
-        matches.C3.winner;
-
-    matches.CSF2.team2 =
-        matches.C4.winner;
-
-
-    matches.CSF3.team1 =
-        matches.C1.loser;
-
-    matches.CSF3.team2 =
-        matches.C2.loser;
-
-
-    matches.CSF4.team1 =
-        matches.C3.loser;
-
-    matches.CSF4.team2 =
-        matches.C4.loser;
-
-
-    matches.CF1.team1 =
-        matches.CSF1.winner;
-
-    matches.CF1.team2 =
-        matches.CSF2.winner;
-
-
-    matches.CF2.team1 =
-        matches.CSF1.loser;
-
-    matches.CF2.team2 =
-        matches.CSF2.loser;
-
-
-    matches.CF3.team1 =
-        matches.CSF3.winner;
-
-    matches.CF3.team2 =
-        matches.CSF4.winner;
-
-
-    matches.CF4.team1 =
-        matches.CSF3.loser;
-
-    matches.CF4.team2 =
-        matches.CSF4.loser;
-
-
-    matches.X1.team1 =
-        matches.CF1.winner;
-
-    matches.X1.team2 =
-        matches.CF3.winner;
-
-
-    matches.X2.team1 =
-        matches.CF1.loser;
-
-    matches.X2.team2 =
-        matches.CF3.loser;
-
-
-    matches.X3.team1 =
-        matches.CF2.winner;
-
-    matches.X3.team2 =
-        matches.CF4.winner;
-
-
-    matches.X4.team1 =
-        matches.CF2.loser;
-
-    matches.X4.team2 =
-        matches.CF4.loser;
-
-
-    matches.X5.team1 =
-        matches.X1.winner;
-
-    matches.X5.team2 =
-        matches.X3.winner;
-
-
-    saveMatches();
-
-}
-
-
-/* =====================================================
-   CARTE MATCH
-===================================================== */
-
-function createMatchCard(id) {
+function createMatchCard(number) {
 
     const match =
-        matches[id];
-
+        matches[number];
 
     const div =
         document.createElement("div");
 
-
-    div.className =
-        "match";
+    div.className = "match";
 
 
-    if(match.type === "final") {
+    if(number === 32) {
 
         div.classList.add(
             "final-match"
         );
-
-    }
-
-
-    /* =================================================
-       FINALE
-    ================================================= */
-
-    if(match.type === "final") {
 
         div.innerHTML = `
 
@@ -1427,15 +1042,13 @@ function createMatchCard(id) {
                 </span>
 
                 <span class="match-status">
-
                     ${
                         match.completed
                         ? "Terminé"
-                        : isAvailable(match)
+                        : matchAvailable(match)
                         ? "À jouer"
                         : "En attente"
                     }
-
                 </span>
 
             </div>
@@ -1443,64 +1056,65 @@ function createMatchCard(id) {
 
             <div class="team-row">
 
-                <span class="team-name">
+                <strong>
+                    ${match.team1 || "À déterminer"}
+                </strong>
 
+                <input
+                    class="score-input"
+                    id="final-s11"
+                    type="number"
+                    placeholder="Set 1"
                     ${
-                        match.team1 ||
-                        "À déterminer"
+                        !matchAvailable(match)
+                        ? "disabled"
+                        : ""
                     }
+                >
 
-                </span>
-
-                <div>
-
-                    <input
-                        class="score-input"
-                        type="number"
-                        id="FINAL_s11"
-                        placeholder="Set 1"
-                    >
-
-                    <input
-                        class="score-input"
-                        type="number"
-                        id="FINAL_s21"
-                        placeholder="Set 2"
-                    >
-
-                </div>
+                <input
+                    class="score-input"
+                    id="final-s21"
+                    type="number"
+                    placeholder="Set 2"
+                    ${
+                        !matchAvailable(match)
+                        ? "disabled"
+                        : ""
+                    }
 
             </div>
 
 
             <div class="team-row">
 
-                <span class="team-name">
+                <strong>
+                    ${match.team2 || "À déterminer"}
+                </strong>
 
+                <input
+                    class="score-input"
+                    id="final-s12"
+                    type="number"
+                    placeholder="Set 1"
                     ${
-                        match.team2 ||
-                        "À déterminer"
+                        !matchAvailable(match)
+                        ? "disabled"
+                        : ""
                     }
+                >
 
-                </span>
-
-                <div>
-
-                    <input
-                        class="score-input"
-                        type="number"
-                        id="FINAL_s12"
-                        placeholder="Set 1"
-                    >
-
-                    <input
-                        class="score-input"
-                        type="number"
-                        id="FINAL_s22"
-                        placeholder="Set 2"
-                    >
-
-                </div>
+                <input
+                    class="score-input"
+                    id="final-s22"
+                    type="number"
+                    placeholder="Set 2"
+                    ${
+                        !matchAvailable(match)
+                        ? "disabled"
+                        : ""
+                    }
+                >
 
             </div>
 
@@ -1509,36 +1123,26 @@ function createMatchCard(id) {
                 class="save-match"
                 onclick="saveFinal()"
                 ${
-                    !isAvailable(match)
+                    !matchAvailable(match)
                     ? "disabled"
                     : ""
                 }
             >
-
                 Enregistrer le résultat
-
             </button>
 
         `;
 
-
         return div;
-
     }
 
-
-    /* =================================================
-       MATCH CLASSIQUE
-    ================================================= */
 
     div.innerHTML = `
 
         <div class="match-header">
 
             <span class="match-name">
-
-                ${match.name}
-
+                Match ${number}
             </span>
 
             <span class="match-status">
@@ -1546,7 +1150,7 @@ function createMatchCard(id) {
                 ${
                     match.completed
                     ? "Terminé"
-                    : isAvailable(match)
+                    : matchAvailable(match)
                     ? "À jouer"
                     : "En attente"
                 }
@@ -1557,44 +1161,22 @@ function createMatchCard(id) {
 
 
         <div class="team-row">
-
-            <span class="team-name">
-
-                ${
-                    match.team1 ||
-                    "À déterminer"
-                }
-
-            </span>
-
+            ${match.team1 || "À déterminer"}
         </div>
 
 
         <div class="team-row">
-
-            <span class="team-name">
-
-                ${
-                    match.team2 ||
-                    "À déterminer"
-                }
-
-            </span>
-
+            ${match.team2 || "À déterminer"}
         </div>
 
 
         <input
             class="score-input"
-            id="${id}_score"
-            value="${
-                match.score1 !== null
-                ? match.score1 + "-" + match.score2
-                : ""
-            }"
-            placeholder="7-9"
+            id="score-${number}"
+            type="text"
+            placeholder="exemple 7-9"
             ${
-                !isAvailable(match)
+                !matchAvailable(match)
                 ? "disabled"
                 : ""
             }
@@ -1603,16 +1185,14 @@ function createMatchCard(id) {
 
         <button
             class="save-match"
-            onclick="saveNormalMatch('${id}')"
+            onclick="saveScore(${number})"
             ${
-                !isAvailable(match)
+                !matchAvailable(match)
                 ? "disabled"
                 : ""
             }
         >
-
             Enregistrer le résultat
-
         </button>
 
 
@@ -1620,13 +1200,8 @@ function createMatchCard(id) {
             match.completed
             ? `
                 <div style="margin-top:10px;">
-
-                    <strong>
-                        ✓ Vainqueur :
-                    </strong>
-
-                    ${match.winner}
-
+                    ✓ Vainqueur :
+                    <strong>${match.winner}</strong>
                 </div>
             `
             : ""
@@ -1634,85 +1209,70 @@ function createMatchCard(id) {
 
     `;
 
-
     return div;
-
 }
 
 
 /* =====================================================
-   TABLEAU PRINCIPAL
+   RENDU TABLEAU PRINCIPAL
 ===================================================== */
 
-function updateMainBracket() {
+function renderMain() {
 
-    document.getElementById(
-        "mainR1"
-    ).innerHTML = "";
-
-
-    document.getElementById(
-        "mainQF"
-    ).innerHTML = "";
-
-
-    document.getElementById(
-        "mainSF"
-    ).innerHTML = "";
-
-
-    document.getElementById(
-        "mainFinal"
-    ).innerHTML = "";
-
-
-    for(let i = 1; i <= 8; i++) {
-
-        document
-            .getElementById("mainR1")
-            .appendChild(
-                createMatchCard(
-                    "M" + i
-                )
-            );
-
-    }
-
-
-    for(let i = 1; i <= 4; i++) {
-
-        document
-            .getElementById("mainQF")
-            .appendChild(
-                createMatchCard(
-                    "QF" + i
-                )
-            );
-
-    }
-
-
-    for(let i = 1; i <= 2; i++) {
-
-        document
-            .getElementById("mainSF")
-            .appendChild(
-                createMatchCard(
-                    "SF" + i
-                )
-            );
-
-    }
-
-
-    document
-        .getElementById("mainFinal")
-        .appendChild(
-            createMatchCard(
-                "FINAL"
-            )
+    const r1 =
+        document.getElementById(
+            "round1"
         );
 
+    const qf =
+        document.getElementById(
+            "quarterFinals"
+        );
+
+    const sf =
+        document.getElementById(
+            "semiFinals"
+        );
+
+    const final =
+        document.getElementById(
+            "final"
+        );
+
+
+    r1.innerHTML = "";
+    qf.innerHTML = "";
+    sf.innerHTML = "";
+    final.innerHTML = "";
+
+
+    for(let i=1;i<=8;i++) {
+
+        r1.appendChild(
+            createMatchCard(i)
+        );
+    }
+
+
+    for(let i=9;i<=12;i++) {
+
+        qf.appendChild(
+            createMatchCard(i)
+        );
+    }
+
+
+    for(let i=13;i<=14;i++) {
+
+        sf.appendChild(
+            createMatchCard(i)
+        );
+    }
+
+
+    final.appendChild(
+        createMatchCard(32)
+    );
 }
 
 
@@ -1720,263 +1280,162 @@ function updateMainBracket() {
    TABLEAU PERDANTS
 ===================================================== */
 
-function updateLoserBracket() {
+function renderLosers() {
 
-    document.getElementById(
-        "consR1"
-    ).innerHTML = "";
+    const r1 =
+        document.getElementById(
+            "loserRound1"
+        );
+
+    const r2 =
+        document.getElementById(
+            "loserRound2"
+        );
+
+    const finals =
+        document.getElementById(
+            "loserFinals"
+        );
 
 
-    document.getElementById(
-        "consSF"
-    ).innerHTML = "";
+    r1.innerHTML = "";
+    r2.innerHTML = "";
+    finals.innerHTML = "";
 
 
-    document.getElementById(
-        "consFinals"
-    ).innerHTML = "";
+    for(let i=15;i<=18;i++) {
 
-
-    for(let i = 1; i <= 4; i++) {
-
-        document
-            .getElementById("consR1")
-            .appendChild(
-                createMatchCard(
-                    "C" + i
-                )
-            );
-
+        r1.appendChild(
+            createMatchCard(i)
+        );
     }
 
 
-    for(let i = 1; i <= 4; i++) {
+    for(let i=19;i<=26;i++) {
 
-        document
-            .getElementById("consSF")
-            .appendChild(
-                createMatchCard(
-                    "CSF" + i
-                )
-            );
-
+        r2.appendChild(
+            createMatchCard(i)
+        );
     }
 
 
-    for(let i = 1; i <= 4; i++) {
+    for(let i=27;i<=31;i++) {
 
-        document
-            .getElementById("consFinals")
-            .appendChild(
-                createMatchCard(
-                    "CF" + i
-                )
-            );
-
+        finals.appendChild(
+            createMatchCard(i)
+        );
     }
-
-
-    for(let i = 1; i <= 5; i++) {
-
-        document
-            .getElementById("consFinals")
-            .appendChild(
-                createMatchCard(
-                    "X" + i
-                )
-            );
-
-    }
-
 }
 
 
 /* =====================================================
-   LES 3 PROCHAINS MATCHS
+   3 PROCHAINS MATCHS
 ===================================================== */
 
-function updateSchedule() {
+function renderSchedule() {
 
-    const list =
+    const container =
         document.getElementById(
             "scheduleList"
         );
 
+    container.innerHTML = "";
 
-    list.innerHTML = "";
 
+    /*
+       ORDRE RÉEL DES MATCHS.
+       On donne priorité au tableau principal,
+       puis au tableau des perdants.
+    */
 
     const order = [
 
-        "M1",
-        "M2",
-        "M3",
-        "M4",
-        "M5",
-        "M6",
-        "M7",
-        "M8",
+        1,2,3,4,5,6,7,8,
 
-        "C1",
-        "C2",
-        "C3",
-        "C4",
+        15,16,17,18,
 
-        "QF1",
-        "QF2",
-        "QF3",
-        "QF4",
+        9,10,11,12,
 
-        "CSF1",
-        "CSF2",
-        "CSF3",
-        "CSF4",
+        19,20,21,22,
 
-        "SF1",
-        "SF2",
+        13,14,
 
-        "CF1",
-        "CF2",
-        "CF3",
-        "CF4",
+        23,24,25,26,
 
-        "X1",
-        "X2",
-        "X3",
-        "X4",
-        "X5",
+        27,28,29,30,31,
 
-        "FINAL"
+        32
 
     ];
 
 
-    /*
-       On récupère uniquement les
-       trois premiers matchs disponibles.
-    */
-
-    const nextMatches =
+    const next =
         order
-            .map(id => matches[id])
-            .filter(match =>
-                match &&
-                isAvailable(match)
-            )
-            .slice(0, 3);
+        .map(number => matches[number])
+        .filter(match =>
+            matchAvailable(match)
+        )
+        .slice(0,3);
 
 
-    /*
-       Si aucun match n'est disponible.
-    */
+    if(next.length === 0) {
 
-    if(nextMatches.length === 0) {
+        container.innerHTML = `
 
-        list.innerHTML = `
+            <div style="
+                grid-column:1/-1;
+                text-align:center;
+                padding:15px;
+                color:#aaa;
+            ">
 
-            <div
-                style="
-                    grid-column: 1 / -1;
-                    text-align: center;
-                    color: #aaa;
-                    padding: 15px;
-                "
-            >
-
-                Tous les matchs disponibles
-                ont été joués.
+                Aucun match disponible pour le moment.
 
             </div>
-
         `;
 
         return;
-
     }
 
 
-    nextMatches.forEach(match => {
+    next.forEach(match => {
 
         const item =
             document.createElement(
                 "div"
             );
 
-
         item.className =
-            "schedule-item available";
-
-
-        /*
-           On récupère le numéro réel
-           du match.
-        */
-
-        let matchNumber = "";
-
-
-        if(match.id === "FINAL") {
-
-            matchNumber = 32;
-
-        }
-
-        else {
-
-            const matchName =
-                match.name.match(
-                    /Match (\d+)/
-                );
-
-            if(matchName) {
-
-                matchNumber =
-                    matchName[1];
-
-            }
-
-        }
+            "schedule-item";
 
 
         item.innerHTML = `
 
             <div class="schedule-number">
-
-                Match ${matchNumber}
-
+                MATCH ${match.number}
             </div>
 
             <div>
-
-                ${
-                    match.team1 ||
-                    "À déterminer"
-                }
-
                 <strong>
-                    VS
+                    ${match.team1}
                 </strong>
 
-                ${
-                    match.team2 ||
-                    "À déterminer"
-                }
+                <br>
 
-            </div>
+                VS
 
-            <div class="schedule-status">
+                <br>
 
-                À jouer maintenant
-
+                <strong>
+                    ${match.team2}
+                </strong>
             </div>
 
         `;
 
 
-        list.appendChild(item);
-
+        container.appendChild(item);
     });
-
 }
 
 
@@ -1986,14 +1445,6 @@ function updateSchedule() {
 
 function calculateStats() {
 
-    const teams =
-        JSON.parse(
-            localStorage.getItem(
-                "foreverPadelTeams16"
-            )
-        ) || [];
-
-
     const stats = {};
 
 
@@ -2002,172 +1453,78 @@ function calculateStats() {
         stats[team] = {
 
             gamesWon: 0,
-
             gamesLost: 0,
-
             matches: 0,
-
             wins: 0,
-
             losses: 0
 
         };
-
     });
 
 
     Object.values(matches)
-        .forEach(match => {
+    .forEach(match => {
 
-            if(
-                !match.completed ||
-                !match.team1 ||
-                !match.team2
-            ) {
-
-                return;
-
-            }
+        if(
+            !match.completed ||
+            !match.team1 ||
+            !match.team2
+        ) return;
 
 
-            if(
-                match.type !== "final" &&
-                match.score1 !== null
-            ) {
+        if(match.number === 32) {
 
-                if(stats[match.team1]) {
-
-                    stats[match.team1]
-                        .gamesWon +=
-                        match.score1;
-
-                    stats[match.team1]
-                        .gamesLost +=
-                        match.score2;
-
-                    stats[match.team1]
-                        .matches++;
-
-                }
+            return;
+        }
 
 
-                if(stats[match.team2]) {
-
-                    stats[match.team2]
-                        .gamesWon +=
-                        match.score2;
-
-                    stats[match.team2]
-                        .gamesLost +=
-                        match.score1;
-
-                    stats[match.team2]
-                        .matches++;
-
-                }
+        if(
+            match.score1 === null ||
+            match.score2 === null
+        ) return;
 
 
-                if(stats[match.winner]) {
+        if(stats[match.team1]) {
 
-                    stats[match.winner]
-                        .wins++;
+            stats[match.team1].gamesWon +=
+                match.score1;
 
-                }
+            stats[match.team1].gamesLost +=
+                match.score2;
 
+            stats[match.team1].matches++;
 
-                if(stats[match.loser]) {
-
-                    stats[match.loser]
-                        .losses++;
-
-                }
-
-            }
+        }
 
 
-            /*
-               STATISTIQUES DE LA FINALE
-            */
+        if(stats[match.team2]) {
 
-            if(
-                match.type === "final" &&
-                match.sets1 &&
-                match.sets2
-            ) {
+            stats[match.team2].gamesWon +=
+                match.score2;
 
-                let games1 = 0;
+            stats[match.team2].gamesLost +=
+                match.score1;
 
-                let games2 = 0;
+            stats[match.team2].matches++;
+
+        }
 
 
-                match.sets1.forEach(
-                    score => {
-                        games1 += score;
-                    }
-                );
+        if(stats[match.winner]) {
+
+            stats[match.winner].wins++;
+        }
 
 
-                match.sets2.forEach(
-                    score => {
-                        games2 += score;
-                    }
-                );
+        if(stats[match.loser]) {
 
+            stats[match.loser].losses++;
+        }
 
-                if(stats[match.team1]) {
-
-                    stats[match.team1]
-                        .gamesWon +=
-                        games1;
-
-                    stats[match.team1]
-                        .gamesLost +=
-                        games2;
-
-                    stats[match.team1]
-                        .matches++;
-
-                }
-
-
-                if(stats[match.team2]) {
-
-                    stats[match.team2]
-                        .gamesWon +=
-                        games2;
-
-                    stats[match.team2]
-                        .gamesLost +=
-                        games1;
-
-                    stats[match.team2]
-                        .matches++;
-
-                }
-
-
-                if(stats[match.winner]) {
-
-                    stats[match.winner]
-                        .wins++;
-
-                }
-
-
-                if(stats[match.loser]) {
-
-                    stats[match.loser]
-                        .losses++;
-
-                }
-
-            }
-
-        });
+    });
 
 
     return stats;
-
 }
 
 
@@ -2175,7 +1532,7 @@ function calculateStats() {
    CLASSEMENT
 ===================================================== */
 
-function updateRanking() {
+function renderRanking() {
 
     const stats =
         calculateStats();
@@ -2197,7 +1554,6 @@ function updateRanking() {
                     b[1].wins -
                     a[1].wins
                 );
-
             }
 
 
@@ -2205,25 +1561,23 @@ function updateRanking() {
                 a[1].gamesWon -
                 a[1].gamesLost;
 
-
             const diffB =
                 b[1].gamesWon -
                 b[1].gamesLost;
 
 
             return diffB - diffA;
-
         }
     );
 
 
-    const tbody =
+    const body =
         document.getElementById(
             "rankingBody"
         );
 
 
-    tbody.innerHTML = "";
+    body.innerHTML = "";
 
 
     ranking.forEach(
@@ -2235,86 +1589,59 @@ function updateRanking() {
                 );
 
 
-            if(index === 0) {
-
+            if(index === 0)
                 tr.className = "gold";
 
-            }
-
-            else if(index === 1) {
-
+            if(index === 1)
                 tr.className = "silver";
 
-            }
-
-            else if(index === 2) {
-
+            if(index === 2)
                 tr.className = "bronze";
-
-            }
 
 
             tr.innerHTML = `
 
-                <td class="position">
-
+                <td>
                     ${index + 1}
-
                 </td>
 
                 <td>
-
                     ${team}
-
                 </td>
 
                 <td>
-
                     ${data.gamesWon}
-
                 </td>
 
                 <td>
-
                     ${data.gamesLost}
-
                 </td>
 
                 <td>
-
                     ${
                         data.gamesWon -
                         data.gamesLost
                     }
-
                 </td>
 
                 <td>
-
                     ${data.matches}
-
                 </td>
 
                 <td>
-
                     ${data.wins}
-
                 </td>
 
                 <td>
-
                     ${data.losses}
-
                 </td>
 
             `;
 
 
-            tbody.appendChild(tr);
-
+            body.appendChild(tr);
         }
     );
-
 }
 
 
@@ -2322,13 +1649,12 @@ function updateRanking() {
    SAUVEGARDE
 ===================================================== */
 
-function saveMatches() {
+function saveData() {
 
     localStorage.setItem(
-        "foreverPadelMatches16Data",
+        "foreverPadelMatches16",
         JSON.stringify(matches)
     );
-
 }
 
 
@@ -2336,12 +1662,12 @@ function saveMatches() {
    CHARGEMENT
 ===================================================== */
 
-function loadSavedMatches() {
+function loadData() {
 
     const saved =
         JSON.parse(
             localStorage.getItem(
-                "foreverPadelMatches16Data"
+                "foreverPadelMatches16"
             )
         );
 
@@ -2350,38 +1676,34 @@ function loadSavedMatches() {
 
 
     Object.keys(saved)
-        .forEach(id => {
+    .forEach(number => {
 
-            if(matches[id]) {
+        if(matches[number]) {
 
-                Object.assign(
-                    matches[id],
-                    saved[id]
-                );
-
-            }
-
-        });
-
+            Object.assign(
+                matches[number],
+                saved[number]
+            );
+        }
+    });
 }
 
 
 /* =====================================================
-   RENDU GLOBAL
+   RENDU COMPLET
 ===================================================== */
 
-function renderAll() {
+function render() {
 
-    updateTournament();
+    updateProgression();
 
-    updateMainBracket();
+    renderMain();
 
-    updateLoserBracket();
+    renderLosers();
 
-    updateSchedule();
+    renderSchedule();
 
-    updateRanking();
-
+    renderRanking();
 }
 
 
@@ -2410,29 +1732,28 @@ if(savedTeams) {
                     "team" + (index + 1)
                 );
 
-
             if(input) {
-
                 input.value = team;
-
             }
 
+            teams.push(team);
         }
     );
 
 
-    initializeTournament();
+    loadData();
 
-}
+    tournamentStarted = true;
 
-else {
+    initializeMatches();
 
-    renderAll();
+} else {
+
+    render();
 
 }
 
 </script>
 
 </body>
-
 </html>
