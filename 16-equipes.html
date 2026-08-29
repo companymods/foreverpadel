@@ -5,8 +5,7 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Forever Padel — Tournoi 16 équipes</title>
 
@@ -115,31 +114,28 @@ h2 {
 .schedule-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 15px;
 }
 
 .schedule-item {
     background: #222;
     border-radius: 7px;
-    padding: 13px;
+    padding: 15px;
 }
 
 .schedule-item.available {
     border-left: 4px solid #e21d48;
 }
 
-.schedule-item.completed {
-    opacity: 0.45;
-}
-
 .schedule-number {
     font-weight: bold;
     color: #e21d48;
+    margin-bottom: 7px;
 }
 
 .schedule-status {
     font-size: 12px;
-    margin-top: 5px;
+    margin-top: 7px;
     color: #bbb;
 }
 
@@ -279,17 +275,6 @@ button:disabled {
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-top: 10px;
-}
-
-.match-note {
-    width: 100%;
-    min-height: 60px;
-    margin-top: 12px;
-    padding: 8px;
-    resize: vertical;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-family: inherit;
 }
 
 .save-match {
@@ -457,20 +442,18 @@ td:nth-child(2) {
 
 
 <!-- =====================================================
-     MATCHS À SUIVRE
+     LES 3 PROCHAINS MATCHS
 ===================================================== -->
 
 <section class="schedule">
 
     <h2>
-        ⚡ MATCHS À SUIVRE
+        ⚡ LES 3 PROCHAINS MATCHS
     </h2>
 
     <p class="schedule-intro">
-
-        Les prochains matchs disponibles
-        apparaissent automatiquement ici.
-
+        Les trois prochains matchs disponibles
+        sont affichés automatiquement.
     </p>
 
     <div
@@ -737,8 +720,6 @@ function createMatch(id, name, type) {
 
         score2: null,
 
-        note: "",
-
         completed: false
 
     };
@@ -865,8 +846,6 @@ matches.FINAL = {
     sets1: [],
 
     sets2: [],
-
-    note: "",
 
     completed: false
 
@@ -1018,11 +997,6 @@ function saveNormalMatch(id) {
             id + "_score"
         ).value.trim();
 
-    const note =
-        document.getElementById(
-            id + "_note"
-        ).value;
-
 
     const result =
         score.match(
@@ -1076,8 +1050,6 @@ function saveNormalMatch(id) {
     match.score1 = score1;
 
     match.score2 = score2;
-
-    match.note = note;
 
     match.completed = true;
 
@@ -1165,14 +1137,6 @@ function saveFinal() {
     }
 
 
-    /*
-        Détermination du vainqueur.
-
-        Chaque équipe doit gagner
-        les deux sets pour remporter
-        la finale.
-    */
-
     let winner = null;
 
     let loser = null;
@@ -1203,7 +1167,7 @@ function saveFinal() {
     else {
 
         alert(
-            "Une finale en 2 sets nécessite qu'une équipe remporte les deux sets."
+            "Une équipe doit remporter les deux sets pour gagner la finale."
         );
 
         return;
@@ -1226,13 +1190,6 @@ function saveFinal() {
     match.winner = winner;
 
     match.loser = loser;
-
-
-    match.note =
-        document.getElementById(
-            "FINAL_note"
-        ).value;
-
 
     match.completed = true;
 
@@ -1300,7 +1257,9 @@ function updateTournament() {
         matches.SF2.winner;
 
 
-    /* TABLEAU DES PERDANTS */
+    /* =================================================
+       TABLEAU DES PERDANTS
+    ================================================= */
 
     matches.C1.team1 =
         matches.M1.loser;
@@ -1546,13 +1505,6 @@ function createMatchCard(id) {
             </div>
 
 
-            <textarea
-                class="match-note"
-                id="FINAL_note"
-                placeholder="Note sur la finale..."
-            ></textarea>
-
-
             <button
                 class="save-match"
                 onclick="saveFinal()"
@@ -1647,20 +1599,6 @@ function createMatchCard(id) {
                 : ""
             }
         >
-
-
-        <textarea
-            class="match-note"
-            id="${id}_note"
-            placeholder="Note sur le match..."
-            ${
-                !isAvailable(match)
-                ? "disabled"
-                : ""
-            }
-        >${
-            match.note || ""
-        }</textarea>
 
 
         <button
@@ -1854,7 +1792,7 @@ function updateLoserBracket() {
 
 
 /* =====================================================
-   MATCHS À SUIVRE
+   LES 3 PROCHAINS MATCHS
 ===================================================== */
 
 function updateSchedule() {
@@ -1913,105 +1851,131 @@ function updateSchedule() {
     ];
 
 
-    order.forEach(
-        (id,index) => {
+    /*
+       On récupère uniquement les
+       trois premiers matchs disponibles.
+    */
 
-            const match =
-                matches[id];
-
-
-            if(!match) return;
-
-
-            const item =
-                document.createElement(
-                    "div"
-                );
-
-
-            item.className =
-                "schedule-item";
-
-
-            if(match.completed) {
-
-                item.classList.add(
-                    "completed"
-                );
-
-            }
-
-            else if(
+    const nextMatches =
+        order
+            .map(id => matches[id])
+            .filter(match =>
+                match &&
                 isAvailable(match)
-            ) {
-
-                item.classList.add(
-                    "available"
-                );
-
-            }
+            )
+            .slice(0, 3);
 
 
-            let status =
-                "En attente";
+    /*
+       Si aucun match n'est disponible.
+    */
+
+    if(nextMatches.length === 0) {
+
+        list.innerHTML = `
+
+            <div
+                style="
+                    grid-column: 1 / -1;
+                    text-align: center;
+                    color: #aaa;
+                    padding: 15px;
+                "
+            >
+
+                Tous les matchs disponibles
+                ont été joués.
+
+            </div>
+
+        `;
+
+        return;
+
+    }
 
 
-            if(match.completed) {
+    nextMatches.forEach(match => {
 
-                status =
-                    "Terminé";
-
-            }
-
-            else if(
-                isAvailable(match)
-            ) {
-
-                status =
-                    "À jouer";
-
-            }
+        const item =
+            document.createElement(
+                "div"
+            );
 
 
-            item.innerHTML = `
-
-                <div class="schedule-number">
-
-                    Match ${index + 1}
-
-                </div>
-
-                <div>
-
-                    ${
-                        match.team1 ||
-                        "À déterminer"
-                    }
-
-                    <strong>
-                        VS
-                    </strong>
-
-                    ${
-                        match.team2 ||
-                        "À déterminer"
-                    }
-
-                </div>
-
-                <div class="schedule-status">
-
-                    ${status}
-
-                </div>
-
-            `;
+        item.className =
+            "schedule-item available";
 
 
-            list.appendChild(item);
+        /*
+           On récupère le numéro réel
+           du match.
+        */
+
+        let matchNumber = "";
+
+
+        if(match.id === "FINAL") {
+
+            matchNumber = 32;
 
         }
-    );
+
+        else {
+
+            const matchName =
+                match.name.match(
+                    /Match (\d+)/
+                );
+
+            if(matchName) {
+
+                matchNumber =
+                    matchName[1];
+
+            }
+
+        }
+
+
+        item.innerHTML = `
+
+            <div class="schedule-number">
+
+                Match ${matchNumber}
+
+            </div>
+
+            <div>
+
+                ${
+                    match.team1 ||
+                    "À déterminer"
+                }
+
+                <strong>
+                    VS
+                </strong>
+
+                ${
+                    match.team2 ||
+                    "À déterminer"
+                }
+
+            </div>
+
+            <div class="schedule-status">
+
+                À jouer maintenant
+
+            </div>
+
+        `;
+
+
+        list.appendChild(item);
+
+    });
 
 }
 
@@ -2122,7 +2086,7 @@ function calculateStats() {
 
 
             /*
-                STATISTIQUES FINALE
+               STATISTIQUES DE LA FINALE
             */
 
             if(
