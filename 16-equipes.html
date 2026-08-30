@@ -9,6 +9,10 @@
 
 <style>
 
+/* =====================================================
+   GENERAL
+===================================================== */
+
 * {
     box-sizing: border-box;
 }
@@ -20,10 +24,6 @@ body {
     color: #111;
 }
 
-/* =========================
-   HEADER
-========================= */
-
 header {
     height: 80px;
     background: white;
@@ -34,6 +34,8 @@ header {
     justify-content: space-between;
 
     padding: 0 35px;
+
+    position: relative;
 }
 
 .logo {
@@ -55,26 +57,21 @@ header {
     color: #777;
 }
 
-
-/* =========================
-   CONTENEUR
-========================= */
-
 .container {
     width: 96%;
-    max-width: 1700px;
+    max-width: 1900px;
     margin: 30px auto;
 }
 
 .section-title {
-    margin-top: 45px;
+    margin-top: 50px;
     margin-bottom: 20px;
 }
 
 
-/* =========================
+/* =====================================================
    PROCHAINS MATCHS
-========================= */
+===================================================== */
 
 .schedule {
     background: #111;
@@ -95,6 +92,7 @@ header {
 .schedule-intro {
     text-align: center;
     color: #aaa;
+    margin-bottom: 20px;
 }
 
 .schedule-list {
@@ -111,18 +109,21 @@ header {
     border-radius: 8px;
 
     padding: 16px;
+
+    min-height: 100px;
 }
 
 .schedule-number {
     color: #e21d48;
     font-weight: bold;
+
     margin-bottom: 8px;
 }
 
 
-/* =========================
+/* =====================================================
    EQUIPES
-========================= */
+===================================================== */
 
 .team-setup {
     background: white;
@@ -136,7 +137,10 @@ header {
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
     gap: 15px;
 }
 
@@ -152,13 +156,18 @@ header {
 
 .team-input:focus {
     outline: none;
+
     border-color: #e21d48;
 }
 
+.save-button {
+    margin-top: 20px;
+}
 
-/* =========================
+
+/* =====================================================
    BOUTONS
-========================= */
+===================================================== */
 
 button {
     border: none;
@@ -184,16 +193,13 @@ button:hover {
 
 button:disabled {
     background: #aaa;
-    cursor: not-allowed;
-}
 
-.save-button {
-    margin-top: 20px;
+    cursor: not-allowed;
 }
 
 
 /* =====================================================
-   BRACKET HORIZONTAL
+   BRACKET PRINCIPAL
 ===================================================== */
 
 .bracket-container {
@@ -201,25 +207,26 @@ button:disabled {
 
     overflow-x: auto;
 
-    padding: 10px 5px 30px;
+    padding:
+        10px
+        5px
+        40px;
 }
 
 .bracket {
     display: flex;
 
-    align-items: stretch;
+    align-items: flex-start;
 
-    gap: 35px;
+    gap: 40px;
 
-    min-width: 1450px;
+    min-width: 1650px;
 }
 
 .round {
-    width: 280px;
+    width: 285px;
 
-    display: flex;
-
-    flex-direction: column;
+    flex-shrink: 0;
 }
 
 .round-title {
@@ -239,38 +246,38 @@ button:disabled {
 }
 
 
-/* =========================
-   POSITIONNEMENT DES ROUNDS
-========================= */
+/* =====================================================
+   ESPACEMENT TABLEAU PRINCIPAL
+===================================================== */
 
-.round.first-round .match {
-    margin-bottom: 18px;
+.first-round .match {
+    margin-bottom: 20px;
 }
 
-.round.quarters {
-    padding-top: 90px;
+.quarters {
+    padding-top: 80px;
 }
 
-.round.quarters .match {
-    margin-bottom: 110px;
+.quarters .match {
+    margin-bottom: 130px;
 }
 
-.round.semis {
-    padding-top: 205px;
+.semifinals {
+    padding-top: 200px;
 }
 
-.round.semis .match {
-    margin-bottom: 240px;
+.semifinals .match {
+    margin-bottom: 280px;
 }
 
-.round.final {
-    padding-top: 330px;
+.final-round {
+    padding-top: 335px;
 }
 
 
-/* =========================
+/* =====================================================
    MATCH
-========================= */
+===================================================== */
 
 .match {
     background: white;
@@ -279,9 +286,12 @@ button:disabled {
 
     padding: 14px;
 
-    box-shadow: 0 3px 12px rgba(0,0,0,.08);
+    box-shadow:
+        0 3px 12px rgba(0,0,0,.08);
 
     position: relative;
+
+    margin-bottom: 25px;
 }
 
 .match-name {
@@ -301,7 +311,8 @@ button:disabled {
 .team-row {
     padding: 9px 4px;
 
-    border-bottom: 1px solid #eee;
+    border-bottom:
+        1px solid #eee;
 
     min-height: 36px;
 }
@@ -317,7 +328,8 @@ button:disabled {
 
     padding: 9px;
 
-    border: 1px solid #ccc;
+    border:
+        1px solid #ccc;
 
     border-radius: 6px;
 }
@@ -335,12 +347,13 @@ button:disabled {
 }
 
 
-/* =========================
+/* =====================================================
    FINALE
-========================= */
+===================================================== */
 
 .final-match {
-    border: 2px solid #e21d48;
+    border:
+        2px solid #e21d48;
 }
 
 .final-label {
@@ -353,11 +366,11 @@ button:disabled {
 
 
 /* =====================================================
-   TABLEAU DES PERDANTS
+   TABLEAUX DE CLASSEMENT
 ===================================================== */
 
 .losers-section {
-    margin-top: 60px;
+    margin-top: 45px;
 }
 
 .losers-description {
@@ -369,30 +382,63 @@ button:disabled {
 .losers-bracket {
     display: flex;
 
-    gap: 35px;
+    gap: 40px;
 
-    min-width: 1450px;
+    min-width: 1650px;
 }
 
 .losers-round {
-    width: 280px;
+    width: 285px;
+
+    flex-shrink: 0;
 }
 
-.losers-round:nth-child(2) {
-    padding-top: 90px;
+
+/* 17-20 */
+
+.placement-one {
+    padding-top: 20px;
 }
 
-.losers-round:nth-child(3) {
-    padding-top: 205px;
+
+/* 23-26 */
+
+.placement-two {
+    padding-top: 95px;
 }
 
-.losers-round:nth-child(4) {
-    padding-top: 330px;
+
+/* 21-22 */
+
+.placement-three {
+    padding-top: 170px;
+}
+
+
+/* 27-28 */
+
+.placement-four {
+    padding-top: 250px;
 }
 
 
 /* =====================================================
-   CLASSEMENT FINAL
+   PETITE FINALE
+===================================================== */
+
+.third-place-section {
+    margin-top: 50px;
+}
+
+.third-place-container {
+    max-width: 500px;
+
+    margin: 0 auto;
+}
+
+
+/* =====================================================
+   CLASSEMENT
 ===================================================== */
 
 .ranking {
@@ -402,7 +448,8 @@ button:disabled {
 
     overflow-x: auto;
 
-    box-shadow: 0 4px 15px rgba(0,0,0,.06);
+    box-shadow:
+        0 4px 15px rgba(0,0,0,.06);
 }
 
 table {
@@ -422,7 +469,8 @@ th {
 td {
     padding: 13px;
 
-    border-bottom: 1px solid #eee;
+    border-bottom:
+        1px solid #eee;
 
     text-align: center;
 }
@@ -451,7 +499,8 @@ td:nth-child(2) {
 @media(max-width: 800px) {
 
     .team-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
     .schedule-list {
@@ -513,7 +562,7 @@ td:nth-child(2) {
 
 
 <!-- =====================================================
-     3 PROCHAINS MATCHS
+     PROCHAINS MATCHS
 ===================================================== -->
 
 <section class="schedule">
@@ -523,7 +572,8 @@ td:nth-child(2) {
 </h2>
 
 <p class="schedule-intro">
-    Les prochains matchs disponibles sont affichés automatiquement.
+    Les matchs disponibles apparaissent automatiquement
+    selon l'avancement du tournoi.
 </p>
 
 <div
@@ -535,7 +585,7 @@ td:nth-child(2) {
 
 
 <!-- =====================================================
-     ENREGISTREMENT DES EQUIPES
+     EQUIPES
 ===================================================== -->
 
 <section class="team-setup">
@@ -569,12 +619,13 @@ td:nth-child(2) {
 ===================================================== -->
 
 <h2 class="section-title">
-    🏆 Tableau principal — classement 1 à 8
+    🏆 Tableau principal
 </h2>
 
 <p>
-    Une défaite dans ce tableau fait automatiquement basculer
-    l'équipe dans le tableau des perdants.
+    Les vainqueurs du premier tour poursuivent dans le
+    tableau principal. Les équipes éliminées poursuivent
+    dans les tableaux de classement.
 </p>
 
 
@@ -583,14 +634,12 @@ td:nth-child(2) {
 <div class="bracket">
 
 
-<!-- =========================
-     PREMIER TOUR
-========================= -->
+<!-- PREMIER TOUR -->
 
 <div class="round first-round">
 
 <div class="round-title">
-    1er tour
+    Premier tour — Matchs 1 à 8
 </div>
 
 <div id="round1"></div>
@@ -598,14 +647,12 @@ td:nth-child(2) {
 </div>
 
 
-<!-- =========================
-     QUARTS
-========================= -->
+<!-- QUARTS -->
 
 <div class="round quarters">
 
 <div class="round-title">
-    Quarts de finale
+    Quarts de finale — Matchs 13 à 16
 </div>
 
 <div id="quarterFinals"></div>
@@ -613,14 +660,12 @@ td:nth-child(2) {
 </div>
 
 
-<!-- =========================
-     DEMI-FINALES
-========================= -->
+<!-- DEMI-FINALES -->
 
-<div class="round semis">
+<div class="round semifinals">
 
 <div class="round-title">
-    Demi-finales
+    Demi-finales — Matchs 29 et 30
 </div>
 
 <div id="semiFinals"></div>
@@ -628,14 +673,12 @@ td:nth-child(2) {
 </div>
 
 
-<!-- =========================
-     FINALE
-========================= -->
+<!-- FINALE -->
 
-<div class="round final">
+<div class="round final-round">
 
 <div class="round-title">
-    Finale
+    Finale — Match 32
 </div>
 
 <div id="finalRound"></div>
@@ -655,14 +698,14 @@ td:nth-child(2) {
 <section class="losers-section">
 
 <h2 class="section-title">
-    🔄 Tableau des perdants — classement 9 à 16
+    🔄 Tableaux de classement
 </h2>
 
 <p class="losers-description">
 
-    Les équipes éliminées du tableau principal continuent
-    automatiquement dans ce tableau afin de déterminer
-    leur classement final.
+    Une équipe éliminée du tableau principal continue
+    le tournoi afin de déterminer précisément sa place
+    finale de la 1ère à la 16ème.
 
 </p>
 
@@ -672,62 +715,54 @@ td:nth-child(2) {
 <div class="losers-bracket">
 
 
-<!-- =========================
-     MATCHS 9-12
-========================= -->
+<!-- 17-20 -->
 
-<div class="losers-round">
+<div class="losers-round placement-one">
 
 <div class="round-title">
-    Premier classement
+    Matchs 17 à 20
 </div>
 
-<div id="losersFirstRound"></div>
+<div id="placementRound1"></div>
 
 </div>
 
 
-<!-- =========================
-     MATCHS 17-20
-========================= -->
+<!-- 23-26 -->
 
-<div class="losers-round">
+<div class="losers-round placement-two">
 
 <div class="round-title">
-    Classement intermédiaire
+    Matchs 23 à 26
 </div>
 
-<div id="losersSecondRound"></div>
+<div id="placementRound2"></div>
 
 </div>
 
 
-<!-- =========================
-     MATCHS 23-26
-========================= -->
+<!-- 21-22 -->
 
-<div class="losers-round">
+<div class="losers-round placement-three">
 
 <div class="round-title">
-    Classement 9 à 16
+    Matchs 21 et 22
 </div>
 
-<div id="losersThirdRound"></div>
+<div id="placementRound3"></div>
 
 </div>
 
 
-<!-- =========================
-     MATCHS 24 / 26 / 32
-========================= -->
+<!-- 27-28 -->
 
-<div class="losers-round">
+<div class="losers-round placement-four">
 
 <div class="round-title">
-    Places finales
+    Matchs 27 et 28
 </div>
 
-<div id="losersFinalRound"></div>
+<div id="placementRound4"></div>
 
 </div>
 
@@ -740,40 +775,22 @@ td:nth-child(2) {
 
 
 <!-- =====================================================
-     CLASSEMENT 5 A 8
+     PETITE FINALE
 ===================================================== -->
 
+<section class="third-place-section">
+
 <h2 class="section-title">
-    🥇 Classement 5ᵉ à 8ᵉ
+    🥉 Petite finale — Match 31
 </h2>
 
-<div class="bracket-container">
+<div class="third-place-container">
 
-<div class="bracket">
-
-<div class="round">
-
-<div class="round-title">
-    Matchs de classement
-</div>
-
-<div id="fiveEightSemi"></div>
+<div id="thirdPlaceMatch"></div>
 
 </div>
 
-<div class="round">
-
-<div class="round-title">
-    Classement final
-</div>
-
-<div id="fiveEightFinal"></div>
-
-</div>
-
-</div>
-
-</div>
+</section>
 
 
 <!-- =====================================================
@@ -813,7 +830,7 @@ td:nth-child(2) {
 </th>
 
 <th>
-    Matchs
+    Matchs joués
 </th>
 
 <th>
@@ -841,9 +858,8 @@ td:nth-child(2) {
 
 <script>
 
-
 /* =====================================================
-   32 MATCHS
+   DONNEES
 ===================================================== */
 
 const matches = {};
@@ -856,8 +872,6 @@ for(let i = 1; i <= 32; i++) {
     matches[i] = {
 
         number: i,
-
-        type: i === 31 ? "final" : "normal",
 
         team1: null,
 
@@ -883,29 +897,38 @@ for(let i = 1; i <= 32; i++) {
 
 
 /* =====================================================
-   CREATION DES EQUIPES
+   CHAMPS DES EQUIPES
 ===================================================== */
 
 function createTeamInputs() {
 
     const container =
-        document.getElementById("teamInputs");
+        document.getElementById(
+            "teamInputs"
+        );
 
     container.innerHTML = "";
+
 
     for(let i = 1; i <= 16; i++) {
 
         const input =
-            document.createElement("input");
+            document.createElement(
+                "input"
+            );
 
-        input.className = "team-input";
+        input.className =
+            "team-input";
 
-        input.id = "team" + i;
+        input.id =
+            "team" + i;
 
         input.placeholder =
             "Équipe " + i;
 
-        container.appendChild(input);
+        container.appendChild(
+            input
+        );
 
     }
 
@@ -913,12 +936,13 @@ function createTeamInputs() {
 
 
 /* =====================================================
-   SAUVEGARDE EQUIPES
+   ENREGISTREMENT EQUIPES
 ===================================================== */
 
 function saveTeams() {
 
     teams.length = 0;
+
 
     for(let i = 1; i <= 16; i++) {
 
@@ -934,10 +958,12 @@ function saveTeams() {
 
     }
 
+
     localStorage.setItem(
         "foreverPadelTeams16",
         JSON.stringify(teams)
     );
+
 
     resetMatches();
 
@@ -946,6 +972,7 @@ function saveTeams() {
     saveData();
 
     render();
+
 
     alert(
         "Les 16 équipes ont été enregistrées."
@@ -960,7 +987,8 @@ function saveTeams() {
 
 function resetMatches() {
 
-    Object.values(matches).forEach(match => {
+    Object.values(matches)
+    .forEach(match => {
 
         match.team1 = null;
         match.team2 = null;
@@ -982,7 +1010,7 @@ function resetMatches() {
 
 
 /* =====================================================
-   PREMIER TOUR
+   MATCHS 1 A 8
 ===================================================== */
 
 function initializeFirstRound() {
@@ -1021,132 +1049,233 @@ function initializeFirstRound() {
 function updateProgression() {
 
 
-    /* =========================
+    /* =================================================
        MATCHS 9-12
-       PERDANTS DU 1ER TOUR
-    ========================= */
+       PERDANTS DU PREMIER TOUR
+    ================================================= */
 
-    matches[9].team1 = matches[1].loser;
-    matches[9].team2 = matches[2].loser;
+    matches[9].team1 =
+        matches[1].loser;
 
-    matches[10].team1 = matches[3].loser;
-    matches[10].team2 = matches[4].loser;
-
-    matches[11].team1 = matches[5].loser;
-    matches[11].team2 = matches[6].loser;
-
-    matches[12].team1 = matches[7].loser;
-    matches[12].team2 = matches[8].loser;
+    matches[9].team2 =
+        matches[2].loser;
 
 
-    /* =========================
+    matches[10].team1 =
+        matches[3].loser;
+
+    matches[10].team2 =
+        matches[4].loser;
+
+
+    matches[11].team1 =
+        matches[5].loser;
+
+    matches[11].team2 =
+        matches[6].loser;
+
+
+    matches[12].team1 =
+        matches[7].loser;
+
+    matches[12].team2 =
+        matches[8].loser;
+
+
+    /* =================================================
        QUARTS 13-16
-    ========================= */
+    ================================================= */
 
-    matches[13].team1 = matches[1].winner;
-    matches[13].team2 = matches[2].winner;
+    matches[13].team1 =
+        matches[1].winner;
 
-    matches[14].team1 = matches[3].winner;
-    matches[14].team2 = matches[4].winner;
-
-    matches[15].team1 = matches[5].winner;
-    matches[15].team2 = matches[6].winner;
-
-    matches[16].team1 = matches[7].winner;
-    matches[16].team2 = matches[8].winner;
+    matches[13].team2 =
+        matches[2].winner;
 
 
-    /* =========================
-       MATCHS 17-20
-    ========================= */
+    matches[14].team1 =
+        matches[3].winner;
 
-    matches[17].team1 = matches[9].winner;
-    matches[17].team2 = matches[10].winner;
-
-    matches[18].team1 = matches[11].winner;
-    matches[18].team2 = matches[12].winner;
-
-    matches[19].team1 = matches[9].loser;
-    matches[19].team2 = matches[10].loser;
-
-    matches[20].team1 = matches[11].loser;
-    matches[20].team2 = matches[12].loser;
+    matches[14].team2 =
+        matches[4].winner;
 
 
-    /* =========================
-       DEMI-FINALES
-    ========================= */
+    matches[15].team1 =
+        matches[5].winner;
 
-    matches[21].team1 = matches[13].winner;
-    matches[21].team2 = matches[14].winner;
-
-    matches[22].team1 = matches[15].winner;
-    matches[22].team2 = matches[16].winner;
+    matches[15].team2 =
+        matches[6].winner;
 
 
-    /* =========================
-       TABLEAU 9-12
-    ========================= */
+    matches[16].team1 =
+        matches[7].winner;
 
-    matches[23].team1 = matches[17].winner;
-    matches[23].team2 = matches[18].winner;
-
-    matches[25].team1 = matches[17].loser;
-    matches[25].team2 = matches[18].loser;
+    matches[16].team2 =
+        matches[8].winner;
 
 
-    /* =========================
-       TABLEAU 13-16
-    ========================= */
+    /* =================================================
+       CLASSEMENT 9-12
+    ================================================= */
 
-    matches[24].team1 = matches[19].winner;
-    matches[24].team2 = matches[20].winner;
+    matches[17].team1 =
+        matches[9].winner;
 
-    matches[26].team1 = matches[19].loser;
-    matches[26].team2 = matches[20].loser;
+    matches[17].team2 =
+        matches[10].winner;
 
 
-    /* =========================
+    matches[18].team1 =
+        matches[11].winner;
+
+    matches[18].team2 =
+        matches[12].winner;
+
+
+    /* =================================================
+       CLASSEMENT 13-16
+    ================================================= */
+
+    matches[19].team1 =
+        matches[9].loser;
+
+    matches[19].team2 =
+        matches[10].loser;
+
+
+    matches[20].team1 =
+        matches[11].loser;
+
+    matches[20].team2 =
+        matches[12].loser;
+
+
+    /* =================================================
        CLASSEMENT 5-8
-    ========================= */
+    ================================================= */
 
-    matches[27].team1 = matches[13].loser;
-    matches[27].team2 = matches[14].loser;
+    matches[21].team1 =
+        matches[13].loser;
 
-    matches[28].team1 = matches[15].loser;
-    matches[28].team2 = matches[16].loser;
-
-
-    /* =========================
-       PETITE FINALE 3-4
-    ========================= */
-
-    matches[29].team1 = matches[21].loser;
-    matches[29].team2 = matches[22].loser;
+    matches[21].team2 =
+        matches[14].loser;
 
 
-    /* =========================
-       5-6
-    ========================= */
+    matches[22].team1 =
+        matches[15].loser;
 
-    matches[30].team1 = matches[27].winner;
-    matches[30].team2 = matches[28].winner;
+    matches[22].team2 =
+        matches[16].loser;
 
 
-    /* =========================
+    /* =================================================
+       MATCHS 23-24
+       CLASSEMENT 9-12
+    ================================================= */
+
+    matches[23].team1 =
+        matches[17].winner;
+
+    matches[23].team2 =
+        matches[18].winner;
+
+
+    matches[24].team1 =
+        matches[17].loser;
+
+    matches[24].team2 =
+        matches[18].loser;
+
+
+    /* =================================================
+       MATCHS 25-26
+       CLASSEMENT 13-16
+    ================================================= */
+
+    matches[25].team1 =
+        matches[19].winner;
+
+    matches[25].team2 =
+        matches[20].winner;
+
+
+    matches[26].team1 =
+        matches[19].loser;
+
+    matches[26].team2 =
+        matches[20].loser;
+
+
+    /* =================================================
+       MATCH 27
+       5e / 6e
+    ================================================= */
+
+    matches[27].team1 =
+        matches[21].winner;
+
+    matches[27].team2 =
+        matches[22].winner;
+
+
+    /* =================================================
+       MATCH 28
+       7e / 8e
+    ================================================= */
+
+    matches[28].team1 =
+        matches[21].loser;
+
+    matches[28].team2 =
+        matches[22].loser;
+
+
+    /* =================================================
+       MATCH 29
+       DEMI-FINALE 1
+    ================================================= */
+
+    matches[29].team1 =
+        matches[13].winner;
+
+    matches[29].team2 =
+        matches[14].winner;
+
+
+    /* =================================================
+       MATCH 30
+       DEMI-FINALE 2
+    ================================================= */
+
+    matches[30].team1 =
+        matches[15].winner;
+
+    matches[30].team2 =
+        matches[16].winner;
+
+
+    /* =================================================
+       MATCH 31
+       PETITE FINALE 3e / 4e
+    ================================================= */
+
+    matches[31].team1 =
+        matches[29].loser;
+
+    matches[31].team2 =
+        matches[30].loser;
+
+
+    /* =================================================
+       MATCH 32
        FINALE
-    ========================= */
+    ================================================= */
 
-    matches[31].team1 = matches[21].winner;
-    matches[31].team2 = matches[22].winner;
+    matches[32].team1 =
+        matches[29].winner;
 
-
-    /* =========================
-       15-16
-    ========================= */
-
-    matches[32].team1 = matches[24].loser;
-    matches[32].team2 = matches[26].loser;
+    matches[32].team2 =
+        matches[30].winner;
 
 }
 
@@ -1173,22 +1302,29 @@ function isAvailable(match) {
 
 function saveNormalMatch(number) {
 
-    const match = matches[number];
+    const match =
+        matches[number];
+
 
     const input =
         document.getElementById(
             "score-" + number
         );
 
-    if(!input) return;
+
+    if(!input)
+        return;
+
 
     const value =
         input.value.trim();
+
 
     const result =
         value.match(
             /^(\d+)\s*-\s*(\d+)$/
         );
+
 
     if(!result) {
 
@@ -1200,11 +1336,23 @@ function saveNormalMatch(number) {
 
     }
 
+
     const score1 =
         parseInt(result[1]);
 
     const score2 =
         parseInt(result[2]);
+
+
+    if(score1 === score2) {
+
+        alert(
+            "Les deux équipes ne peuvent pas avoir le même score."
+        );
+
+        return;
+
+    }
 
 
     if(
@@ -1220,37 +1368,38 @@ function saveNormalMatch(number) {
 
     }
 
-    if(score1 === score2) {
 
-        alert(
-            "Les deux équipes ne peuvent pas avoir le même score."
-        );
+    match.score1 =
+        score1;
 
-        return;
-
-    }
+    match.score2 =
+        score2;
 
 
-    match.score1 = score1;
-    match.score2 = score2;
-
-    match.completed = true;
+    match.completed =
+        true;
 
 
     if(score1 > score2) {
 
-        match.winner = match.team1;
-        match.loser = match.team2;
+        match.winner =
+            match.team1;
 
-    } else {
-
-        match.winner = match.team2;
-        match.loser = match.team1;
+        match.loser =
+            match.team2;
 
     }
 
+    else {
 
-    updateProgression();
+        match.winner =
+            match.team2;
+
+        match.loser =
+            match.team1;
+
+    }
+
 
     saveData();
 
@@ -1261,12 +1410,13 @@ function saveNormalMatch(number) {
 
 /* =====================================================
    FINALE
-   2 SETS GAGNANTS
 ===================================================== */
 
 function saveFinal() {
 
-    const match = matches[31];
+    const match =
+        matches[32];
+
 
     const s11 =
         parseInt(
@@ -1275,6 +1425,7 @@ function saveFinal() {
             ).value
         );
 
+
     const s12 =
         parseInt(
             document.getElementById(
@@ -1282,12 +1433,14 @@ function saveFinal() {
             ).value
         );
 
+
     const s21 =
         parseInt(
             document.getElementById(
                 "final-s21"
             ).value
         );
+
 
     const s22 =
         parseInt(
@@ -1298,9 +1451,14 @@ function saveFinal() {
 
 
     if(
-        [s11,s12,s21,s22]
-        .some(
-            value => isNaN(value)
+        [
+            s11,
+            s12,
+            s21,
+            s22
+        ].some(
+            value =>
+                isNaN(value)
         )
     ) {
 
@@ -1314,6 +1472,7 @@ function saveFinal() {
 
 
     let winner;
+
     let loser;
 
 
@@ -1322,8 +1481,11 @@ function saveFinal() {
         s21 > s22
     ) {
 
-        winner = match.team1;
-        loser = match.team2;
+        winner =
+            match.team1;
+
+        loser =
+            match.team2;
 
     }
 
@@ -1332,15 +1494,18 @@ function saveFinal() {
         s22 > s21
     ) {
 
-        winner = match.team2;
-        loser = match.team1;
+        winner =
+            match.team2;
+
+        loser =
+            match.team1;
 
     }
 
     else {
 
         alert(
-            "Une équipe doit gagner les deux sets."
+            "Une équipe doit gagner deux sets."
         );
 
         return;
@@ -1348,13 +1513,22 @@ function saveFinal() {
     }
 
 
-    match.sets1 = [s11,s21];
-    match.sets2 = [s12,s22];
+    match.sets1 =
+        [s11, s21];
 
-    match.winner = winner;
-    match.loser = loser;
+    match.sets2 =
+        [s12, s22];
 
-    match.completed = true;
+
+    match.winner =
+        winner;
+
+    match.loser =
+        loser;
+
+
+    match.completed =
+        true;
 
 
     saveData();
@@ -1370,19 +1544,25 @@ function saveFinal() {
 
 function createMatchCard(number) {
 
-    const match = matches[number];
+    const match =
+        matches[number];
+
 
     const div =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
-    div.className = "match";
+
+    div.className =
+        "match";
 
 
-    /* =========================
+    /* =================================================
        FINALE
-    ========================= */
+    ================================================= */
 
-    if(number === 31) {
+    if(number === 32) {
 
         div.classList.add(
             "final-match"
@@ -1392,8 +1572,11 @@ function createMatchCard(number) {
         div.innerHTML = `
 
             <div class="final-label">
-                🏆 MATCH 31 — FINALE
+
+                🏆 MATCH 32 — FINALE
+
             </div>
+
 
             <span class="match-status">
 
@@ -1417,6 +1600,7 @@ function createMatchCard(number) {
                     }
                 </strong>
 
+
                 <input
                     class="score-input"
                     id="final-s11"
@@ -1428,6 +1612,7 @@ function createMatchCard(number) {
                         : ""
                     }
                 >
+
 
                 <input
                     class="score-input"
@@ -1453,6 +1638,7 @@ function createMatchCard(number) {
                     }
                 </strong>
 
+
                 <input
                     class="score-input"
                     id="final-s12"
@@ -1464,6 +1650,7 @@ function createMatchCard(number) {
                         : ""
                     }
                 >
+
 
                 <input
                     class="score-input"
@@ -1496,22 +1683,26 @@ function createMatchCard(number) {
 
         `;
 
+
         return div;
 
     }
 
 
-    /* =========================
+    /* =================================================
        MATCH NORMAL
-    ========================= */
+    ================================================= */
 
     div.innerHTML = `
 
         <div>
 
             <span class="match-name">
+
                 Match ${number}
+
             </span>
+
 
             <span class="match-status">
 
@@ -1635,12 +1826,21 @@ function renderMain() {
 
 
     round1.innerHTML = "";
+
     quarter.innerHTML = "";
+
     semi.innerHTML = "";
+
     final.innerHTML = "";
 
 
-    for(let i = 1; i <= 8; i++) {
+    /* 1-8 */
+
+    for(
+        let i = 1;
+        i <= 8;
+        i++
+    ) {
 
         round1.appendChild(
             createMatchCard(i)
@@ -1649,7 +1849,13 @@ function renderMain() {
     }
 
 
-    for(let i = 13; i <= 16; i++) {
+    /* 13-16 */
+
+    for(
+        let i = 13;
+        i <= 16;
+        i++
+    ) {
 
         quarter.appendChild(
             createMatchCard(i)
@@ -1658,89 +1864,18 @@ function renderMain() {
     }
 
 
-    for(let i = 21; i <= 22; i++) {
+    /* 29-30 */
 
-        semi.appendChild(
-            createMatchCard(i)
-        );
-
-    }
-
-
-    final.appendChild(
-        createMatchCard(31)
+    semi.appendChild(
+        createMatchCard(29)
     );
 
-}
+    semi.appendChild(
+        createMatchCard(30)
+    );
 
 
-/* =====================================================
-   TABLEAU DES PERDANTS
-===================================================== */
-
-function renderLosers() {
-
-    const first =
-        document.getElementById(
-            "losersFirstRound"
-        );
-
-    const second =
-        document.getElementById(
-            "losersSecondRound"
-        );
-
-    const third =
-        document.getElementById(
-            "losersThirdRound"
-        );
-
-    const final =
-        document.getElementById(
-            "losersFinalRound"
-        );
-
-
-    first.innerHTML = "";
-    second.innerHTML = "";
-    third.innerHTML = "";
-    final.innerHTML = "";
-
-
-    /* Matchs 9 à 12 */
-
-    for(let i = 9; i <= 12; i++) {
-
-        first.appendChild(
-            createMatchCard(i)
-        );
-
-    }
-
-
-    /* Matchs 17 à 20 */
-
-    for(let i = 17; i <= 20; i++) {
-
-        second.appendChild(
-            createMatchCard(i)
-        );
-
-    }
-
-
-    /* Matchs 23 à 26 */
-
-    for(let i of [23,24,25,26]) {
-
-        third.appendChild(
-            createMatchCard(i)
-        );
-
-    }
-
-
-    /* Matchs 32 */
+    /* 32 */
 
     final.appendChild(
         createMatchCard(32)
@@ -1750,58 +1885,119 @@ function renderLosers() {
 
 
 /* =====================================================
-   CLASSEMENT 5-8
+   TABLEAUX CLASSEMENT
 ===================================================== */
 
-function renderFiveEight() {
+function renderPlacements() {
 
-    const semi =
+    const r1 =
         document.getElementById(
-            "fiveEightSemi"
+            "placementRound1"
         );
 
-    const final =
+    const r2 =
         document.getElementById(
-            "fiveEightFinal"
+            "placementRound2"
+        );
+
+    const r3 =
+        document.getElementById(
+            "placementRound3"
+        );
+
+    const r4 =
+        document.getElementById(
+            "placementRound4"
+        );
+
+    const third =
+        document.getElementById(
+            "thirdPlaceMatch"
         );
 
 
-    semi.innerHTML = "";
-    final.innerHTML = "";
+    r1.innerHTML = "";
+
+    r2.innerHTML = "";
+
+    r3.innerHTML = "";
+
+    r4.innerHTML = "";
+
+    third.innerHTML = "";
 
 
-    semi.appendChild(
-        createMatchCard(27)
-    );
+    /* 17-20 */
 
-    semi.appendChild(
-        createMatchCard(28)
-    );
+    [
+        17,
+        18,
+        19,
+        20
+    ].forEach(number => {
 
-
-    final.appendChild(
-        createMatchCard(30)
-    );
-
-
-    /*
-       Petite finale 3e / 4e
-    */
-
-    const container =
-        document.getElementById(
-            "semiFinals"
+        r1.appendChild(
+            createMatchCard(number)
         );
 
-    container.appendChild(
-        createMatchCard(29)
+    });
+
+
+    /* 23-26 */
+
+    [
+        23,
+        24,
+        25,
+        26
+    ].forEach(number => {
+
+        r2.appendChild(
+            createMatchCard(number)
+        );
+
+    });
+
+
+    /* 21-22 */
+
+    [
+        21,
+        22
+    ].forEach(number => {
+
+        r3.appendChild(
+            createMatchCard(number)
+        );
+
+    });
+
+
+    /* 27-28 */
+
+    [
+        27,
+        28
+    ].forEach(number => {
+
+        r4.appendChild(
+            createMatchCard(number)
+        );
+
+    });
+
+
+    /* PETITE FINALE */
+
+    third.appendChild(
+        createMatchCard(31)
     );
 
 }
 
 
 /* =====================================================
-   3 PROCHAINS MATCHS
+   PROCHAINS MATCHS
 ===================================================== */
 
 function renderSchedule() {
@@ -1853,7 +2049,9 @@ function renderSchedule() {
         .slice(0,3);
 
 
-    if(nextMatches.length === 0) {
+    if(
+        nextMatches.length === 0
+    ) {
 
         container.innerHTML = `
 
@@ -1876,50 +2074,240 @@ function renderSchedule() {
     }
 
 
-    nextMatches.forEach(match => {
+    nextMatches.forEach(
+        match => {
 
-        const item =
-            document.createElement(
-                "div"
+            const item =
+                document.createElement(
+                    "div"
+                );
+
+
+            item.className =
+                "schedule-item";
+
+
+            item.innerHTML = `
+
+                <div class="schedule-number">
+
+                    MATCH ${match.number}
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        ${match.team1}
+                    </strong>
+
+                    <br>
+
+                    VS
+
+                    <br>
+
+                    <strong>
+                        ${match.team2}
+                    </strong>
+
+                </div>
+
+            `;
+
+
+            container.appendChild(
+                item
             );
 
-        item.className =
-            "schedule-item";
+        }
+    );
+
+}
 
 
-        item.innerHTML = `
+/* =====================================================
+   STATISTIQUES
+===================================================== */
 
-            <div class="schedule-number">
+function calculateStats() {
 
-                MATCH ${match.number}
-
-            </div>
-
-
-            <div>
-
-                <strong>
-                    ${match.team1}
-                </strong>
-
-                <br>
-
-                VS
-
-                <br>
-
-                <strong>
-                    ${match.team2}
-                </strong>
-
-            </div>
-
-        `;
+    const stats = {};
 
 
-        container.appendChild(item);
+    teams.forEach(team => {
+
+        stats[team] = {
+
+            gamesWon: 0,
+
+            gamesLost: 0,
+
+            matches: 0,
+
+            wins: 0,
+
+            losses: 0
+
+        };
 
     });
+
+
+    Object.values(matches)
+    .forEach(match => {
+
+        if(
+            !match.completed ||
+            !match.team1 ||
+            !match.team2
+        ) {
+
+            return;
+
+        }
+
+
+        /* Finale */
+
+        if(match.number === 32) {
+
+            let games1 = 0;
+
+            let games2 = 0;
+
+
+            match.sets1.forEach(
+                score => {
+
+                    games1 += score;
+
+                }
+            );
+
+
+            match.sets2.forEach(
+                score => {
+
+                    games2 += score;
+
+                }
+            );
+
+
+            if(stats[match.team1]) {
+
+                stats[match.team1]
+                    .gamesWon += games1;
+
+                stats[match.team1]
+                    .gamesLost += games2;
+
+                stats[match.team1]
+                    .matches++;
+
+            }
+
+
+            if(stats[match.team2]) {
+
+                stats[match.team2]
+                    .gamesWon += games2;
+
+                stats[match.team2]
+                    .gamesLost += games1;
+
+                stats[match.team2]
+                    .matches++;
+
+            }
+
+
+            if(stats[match.winner]) {
+
+                stats[match.winner]
+                    .wins++;
+
+            }
+
+
+            if(stats[match.loser]) {
+
+                stats[match.loser]
+                    .losses++;
+
+            }
+
+
+            return;
+
+        }
+
+
+        /* Match classique */
+
+        if(
+            match.score1 === null ||
+            match.score2 === null
+        ) {
+
+            return;
+
+        }
+
+
+        if(stats[match.team1]) {
+
+            stats[match.team1]
+                .gamesWon +=
+                match.score1;
+
+            stats[match.team1]
+                .gamesLost +=
+                match.score2;
+
+            stats[match.team1]
+                .matches++;
+
+        }
+
+
+        if(stats[match.team2]) {
+
+            stats[match.team2]
+                .gamesWon +=
+                match.score2;
+
+            stats[match.team2]
+                .gamesLost +=
+                match.score1;
+
+            stats[match.team2]
+                .matches++;
+
+        }
+
+
+        if(stats[match.winner]) {
+
+            stats[match.winner]
+                .wins++;
+
+        }
+
+
+        if(stats[match.loser]) {
+
+            stats[match.loser]
+                .losses++;
+
+        }
+
+    });
+
+
+    return stats;
 
 }
 
@@ -1932,55 +2320,93 @@ function renderRanking() {
 
     const ranking = {};
 
-    for(let i = 1; i <= 16; i++) {
+
+    for(
+        let i = 1;
+        i <= 16;
+        i++
+    ) {
 
         ranking[i] = null;
 
     }
 
 
-    /* 1-2 */
+    /* ==============================
+       1 / 2
+    ============================== */
 
-    if(matches[31].completed) {
+    if(
+        matches[32].completed
+    ) {
 
         ranking[1] =
-            matches[31].winner;
+            matches[32].winner;
 
         ranking[2] =
+            matches[32].loser;
+
+    }
+
+
+    /* ==============================
+       3 / 4
+    ============================== */
+
+    if(
+        matches[31].completed
+    ) {
+
+        ranking[3] =
+            matches[31].winner;
+
+        ranking[4] =
             matches[31].loser;
 
     }
 
 
-    /* 3-4 */
+    /* ==============================
+       5 / 6
+    ============================== */
 
-    if(matches[29].completed) {
-
-        ranking[3] =
-            matches[29].winner;
-
-        ranking[4] =
-            matches[29].loser;
-
-    }
-
-
-    /* 5-6 */
-
-    if(matches[30].completed) {
+    if(
+        matches[27].completed
+    ) {
 
         ranking[5] =
-            matches[30].winner;
+            matches[27].winner;
 
         ranking[6] =
-            matches[30].loser;
+            matches[27].loser;
 
     }
 
 
-    /* 9-10 */
+    /* ==============================
+       7 / 8
+    ============================== */
 
-    if(matches[23].completed) {
+    if(
+        matches[28].completed
+    ) {
+
+        ranking[7] =
+            matches[28].winner;
+
+        ranking[8] =
+            matches[28].loser;
+
+    }
+
+
+    /* ==============================
+       9 / 10
+    ============================== */
+
+    if(
+        matches[23].completed
+    ) {
 
         ranking[9] =
             matches[23].winner;
@@ -1991,41 +2417,53 @@ function renderRanking() {
     }
 
 
-    /* 11-12 */
+    /* ==============================
+       11 / 12
+    ============================== */
 
-    if(matches[25].completed) {
+    if(
+        matches[24].completed
+    ) {
 
         ranking[11] =
-            matches[25].winner;
-
-        ranking[12] =
-            matches[25].loser;
-
-    }
-
-
-    /* 13-14 */
-
-    if(matches[24].completed) {
-
-        ranking[13] =
             matches[24].winner;
 
-        ranking[14] =
+        ranking[12] =
             matches[24].loser;
 
     }
 
 
-    /* 15-16 */
+    /* ==============================
+       13 / 14
+    ============================== */
 
-    if(matches[32].completed) {
+    if(
+        matches[25].completed
+    ) {
+
+        ranking[13] =
+            matches[25].winner;
+
+        ranking[14] =
+            matches[25].loser;
+
+    }
+
+
+    /* ==============================
+       15 / 16
+    ============================== */
+
+    if(
+        matches[26].completed
+    ) {
 
         ranking[15] =
-            matches[32].winner;
+            matches[26].winner;
 
         ranking[16] =
-            matches[32].loser;
+            matches[26].loser;
 
     }
 
@@ -2059,11 +2497,17 @@ function renderRanking() {
             stats[team]
             :
             {
-                gamesWon:0,
-                gamesLost:0,
-                matches:0,
-                wins:0,
-                losses:0
+
+                gamesWon: 0,
+
+                gamesLost: 0,
+
+                matches: 0,
+
+                wins: 0,
+
+                losses: 0
+
             };
 
 
@@ -2073,14 +2517,28 @@ function renderRanking() {
             );
 
 
-        if(position === 1)
-            tr.className = "gold";
+        if(position === 1) {
 
-        if(position === 2)
-            tr.className = "silver";
+            tr.className =
+                "gold";
 
-        if(position === 3)
-            tr.className = "bronze";
+        }
+
+
+        if(position === 2) {
+
+            tr.className =
+                "silver";
+
+        }
+
+
+        if(position === 3) {
+
+            tr.className =
+                "bronze";
+
+        }
 
 
         tr.innerHTML = `
@@ -2089,6 +2547,7 @@ function renderRanking() {
                 ${position}
             </td>
 
+
             <td>
                 ${
                     team ||
@@ -2096,13 +2555,16 @@ function renderRanking() {
                 }
             </td>
 
+
             <td>
                 ${data.gamesWon}
             </td>
 
+
             <td>
                 ${data.gamesLost}
             </td>
+
 
             <td>
                 ${
@@ -2111,13 +2573,16 @@ function renderRanking() {
                 }
             </td>
 
+
             <td>
                 ${data.matches}
             </td>
 
+
             <td>
                 ${data.wins}
             </td>
+
 
             <td>
                 ${data.losses}
@@ -2126,161 +2591,11 @@ function renderRanking() {
         `;
 
 
-        body.appendChild(tr);
+        body.appendChild(
+            tr
+        );
 
     }
-
-}
-
-
-/* =====================================================
-   STATISTIQUES
-===================================================== */
-
-function calculateStats() {
-
-    const stats = {};
-
-
-    teams.forEach(team => {
-
-        stats[team] = {
-
-            gamesWon:0,
-
-            gamesLost:0,
-
-            matches:0,
-
-            wins:0,
-
-            losses:0
-
-        };
-
-    });
-
-
-    Object.values(matches)
-    .forEach(match => {
-
-        if(
-            !match.completed ||
-            !match.team1 ||
-            !match.team2
-        ) {
-
-            return;
-
-        }
-
-
-        if(match.number === 31) {
-
-            let games1 = 0;
-            let games2 = 0;
-
-
-            match.sets1.forEach(
-                score => games1 += score
-            );
-
-
-            match.sets2.forEach(
-                score => games2 += score
-            );
-
-
-            if(stats[match.team1]) {
-
-                stats[match.team1]
-                    .gamesWon += games1;
-
-                stats[match.team1]
-                    .gamesLost += games2;
-
-                stats[match.team1]
-                    .matches++;
-
-            }
-
-
-            if(stats[match.team2]) {
-
-                stats[match.team2]
-                    .gamesWon += games2;
-
-                stats[match.team2]
-                    .gamesLost += games1;
-
-                stats[match.team2]
-                    .matches++;
-
-            }
-
-
-            if(stats[match.winner])
-                stats[match.winner].wins++;
-
-
-            if(stats[match.loser])
-                stats[match.loser].losses++;
-
-
-            return;
-
-        }
-
-
-        if(
-            match.score1 === null ||
-            match.score2 === null
-        ) {
-
-            return;
-
-        }
-
-
-        if(stats[match.team1]) {
-
-            stats[match.team1]
-                .gamesWon += match.score1;
-
-            stats[match.team1]
-                .gamesLost += match.score2;
-
-            stats[match.team1]
-                .matches++;
-
-        }
-
-
-        if(stats[match.team2]) {
-
-            stats[match.team2]
-                .gamesWon += match.score2;
-
-            stats[match.team2]
-                .gamesLost += match.score1;
-
-            stats[match.team2]
-                .matches++;
-
-        }
-
-
-        if(stats[match.winner])
-            stats[match.winner].wins++;
-
-
-        if(stats[match.loser])
-            stats[match.loser].losses++;
-
-    });
-
-
-    return stats;
 
 }
 
@@ -2344,9 +2659,7 @@ function render() {
 
     renderMain();
 
-    renderLosers();
-
-    renderFiveEight();
+    renderPlacements();
 
     renderSchedule();
 
@@ -2380,12 +2693,17 @@ if(savedTeams) {
 
             const input =
                 document.getElementById(
-                    "team" + (index + 1)
+                    "team" +
+                    (index + 1)
                 );
 
 
-            if(input)
-                input.value = team;
+            if(input) {
+
+                input.value =
+                    team;
+
+            }
 
         }
     );
